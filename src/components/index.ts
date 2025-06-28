@@ -1,0 +1,1 @@
+export { TarotCardModal } from './TarotCardModal'; 
