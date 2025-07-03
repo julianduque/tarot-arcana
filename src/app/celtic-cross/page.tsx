@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { tarotCards, TarotCard } from "../../tarotCards";
-import { TarotCardModal } from "../../components/TarotCardModal";
+import { TarotCardModal, CardSelection } from "../../components";
 import { analyzeReading } from "../actions";
 
 interface DrawnCard extends TarotCard {
@@ -14,26 +14,19 @@ interface DrawnCard extends TarotCard {
 
 export default function CelticCrossReading() {
   const [drawnCards, setDrawnCards] = useState<DrawnCard[]>([]);
-  const [isDrawing, setIsDrawing] = useState(false);
+  const [showCardSelection, setShowCardSelection] = useState(false);
   const [selectedCard, setSelectedCard] = useState<DrawnCard | null>(null);
   const [question, setQuestion] = useState("");
   const [interpretation, setInterpretation] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
-  const drawCards = async () => {
-    setIsDrawing(true);
-    const shuffled = [...tarotCards].sort(() => Math.random() - 0.5);
-    const selected = shuffled.slice(0, 10).map((card) => ({
-      ...card,
-      isReversed: Math.random() < 0.5,
-      isRevealed: false,
-    }));
+  const startCardSelection = () => {
+    setShowCardSelection(true);
+  };
 
-    // Simulate card drawing delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setDrawnCards(selected);
-    setIsDrawing(false);
+  const handleCardsDrawn = (cards: DrawnCard[]) => {
+    setDrawnCards(cards);
+    setShowCardSelection(false);
   };
 
   const revealCard = (index: number) => {
@@ -46,6 +39,7 @@ export default function CelticCrossReading() {
 
   const resetReading = () => {
     setDrawnCards([]);
+    setShowCardSelection(false);
     setSelectedCard(null);
     setQuestion("");
     setInterpretation(null);
@@ -102,18 +96,15 @@ export default function CelticCrossReading() {
       <div className="container mx-auto px-4">
         <div className="reading-container">
           <header className="text-center mb-16">
-            <Link href="/" className="inline-block mb-6 text-gold hover:text-antique-gold transition-colors">
-              ← Back to Readings
-            </Link>
             <h1 className="text-5xl font-serif mb-6 text-shadow-gold text-gold">
-              ✦ Celtic Cross ✦
+              Celtic Cross
             </h1>
             <p className="text-xl text-antique-gold mb-12">
               The ancient ten-card spread
             </p>
 
             {/* Question Input */}
-            <div className="mb-12 max-w-2xl mx-auto">
+            <div className="mb-12 max-w-5xl mx-auto">
               <label htmlFor="question">
                 What would you like guidance on?
               </label>
@@ -122,19 +113,26 @@ export default function CelticCrossReading() {
                 type="text"
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
-                placeholder="Enter your question about love, career, personal growth..."
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && question.trim() && drawnCards.length === 0 && !showCardSelection) {
+                    startCardSelection();
+                  } else if (e.key === 'Enter' && question.trim() && drawnCards.every(card => card.isRevealed)) {
+                    handleAnalyzeReading();
+                  }
+                }}
+                placeholder="Enter your question about love, career, personal growth, or any area where you seek guidance..."
                 disabled={drawnCards.length > 0}
               />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              {drawnCards.length === 0 && (
+              {drawnCards.length === 0 && !showCardSelection && (
                 <button
-                  onClick={drawCards}
-                  disabled={isDrawing || !question.trim()}
+                  onClick={startCardSelection}
+                  disabled={!question.trim()}
                   className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isDrawing ? "Drawing Cards..." : "Draw Celtic Cross"}
+                  Begin Card Selection
                 </button>
               )}
 
@@ -145,6 +143,15 @@ export default function CelticCrossReading() {
               )}
             </div>
           </header>
+
+          {/* Card Selection Experience */}
+          {showCardSelection && (
+            <CardSelection
+              onCardsDrawn={handleCardsDrawn}
+              cardsToSelect={10}
+              readingType="celtic-cross"
+            />
+          )}
 
           {drawnCards.length > 0 && (
             <section className="mb-16">

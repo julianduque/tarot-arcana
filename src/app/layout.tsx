@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { Navigation } from "../components";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Tarot Arcana",
-  description: "A jungian and esoteric approach to tarot",
+  description: "An esoteric approach to tarot rooted in Western mystical traditions",
 };
 
 export default function RootLayout({
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navigation />
         {children}
       </body>
     </html>
