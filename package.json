@@ -3,6 +3,13 @@
   "description": "Tarot Arcana is a tarot reading app that uses the OpenAI API to generate tarot readings.",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": "Julian Duque <julianduquej@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julianduque/tarot-arcana"
+  },
+  "homepage": "https://tarot.julianduque.co",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
