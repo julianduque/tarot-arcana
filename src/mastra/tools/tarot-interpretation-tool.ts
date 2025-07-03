@@ -18,7 +18,7 @@ export const tarotInterpretationTool = createTool({
   `,
   inputSchema: z.object({
     question: z.string().describe('The querent\'s question or area of focus'),
-    readingType: z.enum(['celtic-cross', 'three-card']).describe('Type of tarot spread'),
+    readingType: z.enum(['celtic-cross', 'three-card', 'one-card']).describe('Type of tarot spread'),
     cards: z.array(z.object({
       cardId: z.number().describe('ID of the tarot card'),
       position: z.string().describe('Position name in the spread (e.g., "Present Situation", "Past", etc.)'),

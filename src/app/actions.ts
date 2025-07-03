@@ -4,7 +4,7 @@ import { mastra } from "../mastra";
 
 interface ReadingData {
   question: string;
-  readingType: "three-card" | "celtic-cross";
+  readingType: "one-card" | "three-card" | "celtic-cross";
   cards: {
     cardId: number;
     position: string;

@@ -11,7 +11,7 @@ interface DrawnCard extends TarotCard {
   isRevealed: boolean;
 }
 
-export default function ThreeCardReading() {
+export default function OneCardReading() {
   const [drawnCards, setDrawnCards] = useState<DrawnCard[]>([]);
   const [showCardSelection, setShowCardSelection] = useState(false);
   const [selectedCard, setSelectedCard] = useState<DrawnCard | null>(null);
@@ -51,7 +51,7 @@ export default function ThreeCardReading() {
     try {
       const readingData = {
         question: question.trim(),
-        readingType: "three-card" as const,
+        readingType: "one-card" as const,
         cards: drawnCards.map((card, index) => ({
           cardId: card.id,
           position: positionNames[index],
@@ -77,7 +77,7 @@ export default function ThreeCardReading() {
     }
   };
 
-  const positionNames = ["Past", "Present", "Future"];
+  const positionNames = ["Divine Guidance"];
 
   return (
     <main className="min-h-screen">
@@ -85,10 +85,10 @@ export default function ThreeCardReading() {
         <div className="reading-container">
           <header className="text-center mb-16">
             <h1 className="text-5xl font-serif mb-6 text-shadow-gold text-gold">
-              Three Card Reading
+              One Card Reading
             </h1>
             <p className="text-xl text-antique-gold mb-12">
-              Past, Present, and Future
+              Simple wisdom for your path
             </p>
 
             {/* Question Input/Display */}
@@ -144,28 +144,28 @@ export default function ThreeCardReading() {
           {showCardSelection && (
             <CardSelection
               onCardsDrawn={handleCardsDrawn}
-              cardsToSelect={3}
-              readingType="three-card"
+              cardsToSelect={1}
+              readingType="one-card"
             />
           )}
 
           {drawnCards.length > 0 && (
             <section className="mb-16">
-              <div className="cards-grid">
+              <div className="one-card-layout">
                 {drawnCards.map((card, index) => (
-                  <div key={`${card.id}-${index}`} className="card-column">
+                  <div key={`${card.id}-${index}`} className="one-card-container">
                     {/* Position Label */}
                     <h3 className="position-label">{positionNames[index]}</h3>
 
                     {/* Card */}
                     <div
-                      className={`card-container cursor-pointer ${
+                      className={`card-container cursor-pointer one-card-display ${
                         card.isRevealed
                           ? "hover:shadow-xl hover:shadow-gold/40"
                           : "hover:shadow-xl hover:shadow-gold/20"
                       }`}
                       onClick={() => handleCardClick(card, index)}
-                      style={{ width: "280px", height: "480px" }}
+                      style={{ width: "320px", height: "560px" }}
                     >
                       {!card.isRevealed ? (
                         /* Card Back */
@@ -214,7 +214,7 @@ export default function ThreeCardReading() {
           {interpretation && (
             <section className="mb-16">
               <div className="analysis-container">
-                <h2>Your Three Card Interpretation</h2>
+                <h2>Your One Card Interpretation</h2>
                 <div className="markdown-content">
                   <ReactMarkdown>{interpretation}</ReactMarkdown>
                 </div>
@@ -233,4 +233,4 @@ export default function ThreeCardReading() {
       )}
     </main>
   );
-} 
+}

@@ -102,26 +102,34 @@ export default function CelticCrossReading() {
               The ancient ten-card spread
             </p>
 
-            {/* Question Input */}
+            {/* Question Input/Display */}
             <div className="mb-12 max-w-5xl mx-auto">
-              <label htmlFor="question">
-                What would you like guidance on?
-              </label>
-              <input
-                id="question"
-                type="text"
-                value={question}
-                onChange={(e) => setQuestion(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && question.trim() && drawnCards.length === 0 && !showCardSelection) {
-                    startCardSelection();
-                  } else if (e.key === 'Enter' && question.trim() && drawnCards.every(card => card.isRevealed)) {
-                    handleAnalyzeReading();
-                  }
-                }}
-                placeholder="Enter your question about love, career, personal growth, or any area where you seek guidance..."
-                disabled={drawnCards.length > 0}
-              />
+              {drawnCards.length === 0 ? (
+                <>
+                  <label htmlFor="question">
+                    What would you like guidance on?
+                  </label>
+                  <textarea
+                    id="question"
+                    value={question}
+                    onChange={(e) => setQuestion(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && e.shiftKey === false && question.trim() && drawnCards.length === 0 && !showCardSelection) {
+                        e.preventDefault();
+                        startCardSelection();
+                      }
+                    }}
+                    placeholder="Enter your question about love, career, personal growth, or any area where you seek guidance..."
+                    rows={3}
+                    className="question-textarea"
+                  />
+                </>
+              ) : (
+                <div className="question-display">
+                  <h3 className="question-label">Your Question:</h3>
+                  <p className="question-text">{question}</p>
+                </div>
+              )}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
@@ -417,7 +425,7 @@ export default function CelticCrossReading() {
                       disabled={isAnalyzing || !question.trim()}
                       className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {isAnalyzing ? "Analyzing..." : "✦ Analyze Reading ✦"}
+                      {isAnalyzing ? "Analyzing..." : "Analyze Reading"}
                     </button>
                   </div>
                 )}
@@ -429,7 +437,7 @@ export default function CelticCrossReading() {
           {interpretation && (
             <section className="mb-16">
               <div className="analysis-container">
-                <h2>✦ Your Celtic Cross Interpretation ✦</h2>
+                <h2>Your Celtic Cross Interpretation</h2>
                 <div className="markdown-content">
                   <ReactMarkdown>{interpretation}</ReactMarkdown>
                 </div>

@@ -9,11 +9,11 @@ export function Navigation() {
   const [isSpreadsOpen, setIsSpreadsOpen] = useState(false);
 
   const spreadItems = [
+    { href: "/one-card", label: "One Card Reading", description: "Simple wisdom for your path" },
     { href: "/three-card", label: "Three Card Reading", description: "Past, Present, Future" },
     { href: "/celtic-cross", label: "Celtic Cross", description: "Ancient 10-card spread" },
     // Future spreads can be added here
     // { href: "/horseshoe", label: "Horseshoe Spread", description: "7-card relationship spread" },
-    // { href: "/single-card", label: "Single Card", description: "Daily guidance" },
   ];
 
   const isSpreadActive = spreadItems.some(item => pathname === item.href);
@@ -23,6 +23,12 @@ export function Navigation() {
       <div className="navigation-content">
         {/* Logo/Brand */}
         <Link href="/" className="brand-link">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/logo.png" 
+            alt="Tarot Arcana" 
+            className="brand-logo"
+          />
           <span className="brand-text">Tarot Arcana</span>
         </Link>
 
