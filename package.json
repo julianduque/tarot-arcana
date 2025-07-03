@@ -1,5 +1,6 @@
 {
-  "name": "temp-tarot-app",
+  "name": "tarot-arcana",
+  "description": "Tarot Arcana is a tarot reading app that uses the OpenAI API to generate tarot readings.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
