@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { tarotCards, TarotCard } from "../../tarotCards";
+import { TarotCard } from "../../tarotCards";
 import { TarotCardModal, CardSelection } from "../../components";
 import { analyzeReading } from "../actions";
 

@@ -64,7 +64,7 @@ export const tarotInterpretationTool = createTool({
     const formattedReading = {
       sacredOverview: {
         ...readingContext,
-        spiritualMessage: getSpiritualMessage(cardData, question),
+        spiritualMessage: getSpiritualMessage(cardData),
         elementalDignities: calculateElementalDignities(cardData),
         qabalisticSignificance: getQabalisticSignificance(cardData),
         astrologicalTimings: getAstrologicalTimings(cardData)
@@ -185,34 +185,6 @@ function interpretAstrologicalSymbol(symbol: string): string {
   return 'Complex astrological influence requiring deeper study';
 }
 
-function getJungianArchetype(card: TarotCard): string {
-  const archetypes: { [key: string]: string } = {
-    'The Fool': 'The Innocent/Child - Beginning the journey',
-    'The Magician': 'The Magician/Creator - Manifesting will',
-    'The High Priestess': 'The Wise Woman/Anima - Intuitive wisdom',
-    'The Empress': 'The Mother - Nurturing creativity',
-    'The Emperor': 'The Father/Ruler - Authority and structure',
-    'The Hierophant': 'The Sage/Teacher - Traditional wisdom',
-    'The Lovers': 'The Lover/Anima-Animus - Union of opposites',
-    'The Chariot': 'The Hero/Warrior - Overcoming obstacles',
-    'Strength': 'The Hero/Tamer - Inner strength and courage',
-    'The Hermit': 'The Wise Old Man - Inner guidance',
-    'Wheel of Fortune': 'The Self - Cycles and destiny',
-    'Justice': 'The Judge - Balance and karma',
-    'The Hanged Man': 'The Martyr/Sacrificial - Surrender and perspective',
-    'Death': 'The Transformer - Endings and beginnings',
-    'Temperance': 'The Alchemist - Integration and balance',
-    'The Devil': 'The Shadow - Material bondage and desire',
-    'The Tower': 'The Destroyer - Breaking illusions',
-    'The Star': 'The Divine Child - Hope and inspiration',
-    'The Moon': 'The Trickster/Illusion - Unconscious fears',
-    'The Sun': 'The Self - Enlightenment and joy',
-    'Judgement': 'The Angel - Spiritual awakening',
-    'The World': 'The Self Realized - Completion and integration'
-  };
-  
-  return archetypes[card.name] || 'Minor Arcana - Situational archetype';
-}
 
 function getKabbalahPath(card: TarotCard): string {
   if (card.id > 21) return 'Minor Arcana - Elemental expression';
@@ -245,106 +217,10 @@ function getKabbalahPath(card: TarotCard): string {
   return paths[card.hebrew] || 'Path unknown';
 }
 
-function getEsotericKeywords(card: TarotCard, isReversed: boolean): string[] {
-  const baseKeywords = card.name.toLowerCase().includes('ace') ? ['New beginnings', 'Pure potential'] :
-                     card.name.toLowerCase().includes('two') ? ['Duality', 'Choice', 'Balance'] :
-                     card.name.toLowerCase().includes('three') ? ['Growth', 'Expansion', 'Creation'] :
-                     card.name.toLowerCase().includes('four') ? ['Stability', 'Foundation', 'Structure'] :
-                     card.name.toLowerCase().includes('five') ? ['Conflict', 'Challenge', 'Change'] :
-                     card.name.toLowerCase().includes('six') ? ['Harmony', 'Communication', 'Flow'] :
-                     card.name.toLowerCase().includes('seven') ? ['Spiritual test', 'Reflection', 'Assessment'] :
-                     card.name.toLowerCase().includes('eight') ? ['Movement', 'Regeneration', 'Power'] :
-                     card.name.toLowerCase().includes('nine') ? ['Attainment', 'Completion', 'Wisdom'] :
-                     card.name.toLowerCase().includes('ten') ? ['Culmination', 'Full expression', 'Excess'] :
-                     card.name.toLowerCase().includes('page') ? ['Earth element', 'Student', 'Message'] :
-                     card.name.toLowerCase().includes('knight') ? ['Air element', 'Action', 'Movement'] :
-                     card.name.toLowerCase().includes('queen') ? ['Water element', 'Receptive', 'Intuitive'] :
-                     card.name.toLowerCase().includes('king') ? ['Fire element', 'Active', 'Authoritative'] :
-                     ['Major Arcana', 'Spiritual lesson'];
-
-  if (isReversed) {
-    baseKeywords.push('Internalized', 'Shadow work', 'Blocked energy');
-  }
-
-  return baseKeywords;
-}
-
-function getPsychologicalSignificance(card: TarotCard, isReversed: boolean, position: string): string {
-  const base = isReversed ? 
-    `The reversed ${card.name} suggests internalized or blocked energy around ${card.meaning.toLowerCase()}. This may indicate shadow material or unconscious resistance.` :
-    `The upright ${card.name} represents active expression of ${card.meaning.toLowerCase()}.`;
-  
-  return `${base} In the ${position} position, this speaks to how this energy manifests in relation to the question.`;
-}
-
-function getDominantThemes(cardData: CardWithPosition[]): string[] {
-  const themes = [];
-  const majorCount = cardData.filter(c => c.card.id <= 21).length;
-  const reversedCount = cardData.filter(c => c.isReversed).length;
-  
-  if (majorCount > cardData.length / 2) {
-    themes.push('Major spiritual/psychological shifts');
-  }
-  
-  if (reversedCount > cardData.length / 2) {
-    themes.push('Shadow work and internal processing needed');
-  }
-  
-  themes.push('Individual journey of consciousness');
-  
-  return themes;
-}
-
-function getShadowWorkInsights(cardData: CardWithPosition[]): string[] {
-  const insights = [];
-  
-  cardData.filter(c => c.isReversed).forEach(({ card, position }) => {
-    insights.push(`${card.name} reversed in ${position}: Explore hidden aspects of ${card.meaning.toLowerCase()}`);
-  });
-  
-  if (insights.length === 0) {
-    insights.push('No reversed cards - consider what aspects of these energies you might be avoiding or projecting');
-  }
-  
-  return insights;
-}
-
-function getIndividuationGuidance(cardData: CardWithPosition[]): string[] {
-  const guidance = [
-    'Integration of conscious and unconscious elements',
-    'Recognition of projected aspects in others',
-    'Development of authentic self-expression'
-  ];
-  
-  const majorArcana = cardData.filter(c => c.card.id <= 21);
-  if (majorArcana.length > 0) {
-    guidance.push(`Major archetypal work indicated through ${majorArcana.map(c => c.card.name).join(', ')}`);
-  }
-  
-  return guidance;
-}
-
-function getPracticalAdvice(cardData: CardWithPosition[], question: string): string[] {
-  const advice = [
-    'Reflect on the patterns shown in this reading',
-    'Consider journaling about the themes that emerge',
-    'Meditate on the archetypal energies present'
-  ];
-  
-  if (question.toLowerCase().includes('relationship')) {
-    advice.push('Focus on your own psychological wholeness in relationships');
-  }
-  
-  if (question.toLowerCase().includes('career') || question.toLowerCase().includes('work')) {
-    advice.push('Align professional choices with your authentic self');
-  }
-  
-  return advice;
-} 
 
 // New esoteric helper functions for the updated agent
 
-function getSpiritualMessage(cardData: CardWithPosition[], question: string): string {
+function getSpiritualMessage(cardData: CardWithPosition[]): string {
   const majorCount = cardData.filter(c => c.card.id <= 21).length;
   const reversedCount = cardData.filter(c => c.isReversed).length;
   
@@ -359,7 +235,12 @@ function getSpiritualMessage(cardData: CardWithPosition[], question: string): st
   return 'The cosmos offers guidance through the sacred language of tarot, illuminating your path forward.';
 }
 
-function calculateElementalDignities(cardData: CardWithPosition[]): any {
+function calculateElementalDignities(cardData: CardWithPosition[]): Array<{
+  cardName: string;
+  element: string | undefined;
+  dignity: string;
+  influence: string;
+}> {
   const dignities = cardData.map((item, index) => {
     const prevCard = index > 0 ? cardData[index - 1] : null;
     const nextCard = index < cardData.length - 1 ? cardData[index + 1] : null;
@@ -423,7 +304,16 @@ function calculateElementalInfluence(current: string | undefined, prev: string |
   return influences.length > 0 ? influences.join(', ') : 'Balanced elemental energy';
 }
 
-function getQabalisticSignificance(cardData: CardWithPosition[]): any {
+function getQabalisticSignificance(cardData: CardWithPosition[]): {
+  pathways: Array<{
+    cardName: string;
+    hebrewLetter: string;
+    path: string;
+    sephirothic: string;
+  }>;
+  treeOfLifeMessage: string;
+  sephirothicBalance: string;
+} {
   const majorCards = cardData.filter(c => c.card.id <= 21);
   const pathways = majorCards.map(c => ({
     cardName: c.card.name,
@@ -486,7 +376,16 @@ function getSephirothicBalance(majorCards: CardWithPosition[]): string {
   }
 }
 
-function getAstrologicalTimings(cardData: CardWithPosition[]): any {
+function getAstrologicalTimings(cardData: CardWithPosition[]): {
+  individualTimings: Array<{
+    cardName: string;
+    astrologySymbol: string;
+    timing: string;
+    influence: string;
+  }>;
+  overallTiming: string;
+  planetaryHours: string;
+} {
   const timings = cardData.map(c => ({
     cardName: c.card.name,
     astrologySymbol: c.card.astrology,

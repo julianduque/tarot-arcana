@@ -16,7 +16,7 @@ interface CardSelectionProps {
 
 type SelectionPhase = 'ready' | 'shuffling' | 'cut' | 'selecting' | 'complete';
 
-export function CardSelection({ onCardsDrawn, cardsToSelect, readingType }: CardSelectionProps) {
+export function CardSelection({ onCardsDrawn, cardsToSelect }: CardSelectionProps) {
   const [phase, setPhase] = useState<SelectionPhase>('ready');
   const [selectedPile, setSelectedPile] = useState<number | null>(null);
   const [shuffledDeck, setShuffledDeck] = useState<TarotCard[]>([]);
@@ -104,15 +104,15 @@ export function CardSelection({ onCardsDrawn, cardsToSelect, readingType }: Card
     <div className="card-selection-container">
       {/* Progress Indicator */}
       <div className="selection-progress">
-        <div className={`progress-step ${phase === 'ready' ? 'active' : phase !== 'ready' ? 'completed' : ''}`}>
+        <div className={`progress-step ${phase === 'ready' ? 'active' : 'completed'}`}>
           <span className="progress-step-icon">🧘</span>
           <span>Focus</span>
         </div>
-        <div className={`progress-step ${phase === 'shuffling' ? 'active' : ['cut', 'selecting', 'complete'].includes(phase) ? 'completed' : ''}`}>
+        <div className={`progress-step ${phase === 'shuffling' ? 'active' : (phase === 'cut' || phase === 'selecting' || phase === 'complete') ? 'completed' : ''}`}>
           <span className="progress-step-icon">🔀</span>
           <span>Shuffle</span>
         </div>
-        <div className={`progress-step ${phase === 'cut' ? 'active' : ['selecting', 'complete'].includes(phase) ? 'completed' : ''}`}>
+        <div className={`progress-step ${phase === 'cut' ? 'active' : (phase === 'selecting' || phase === 'complete') ? 'completed' : ''}`}>
           <span className="progress-step-icon">✂️</span>
           <span>Cut</span>
         </div>
