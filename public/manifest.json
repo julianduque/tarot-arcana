@@ -1,0 +1,42 @@
+{
+  "name": "Tarot Arcana - Esoteric Tarot Readings",
+  "short_name": "Tarot Arcana",
+  "description": "An esoteric approach to tarot rooted in Western mystical traditions. Explore the Golden Dawn, Thelemic, and Rider-Waite systems for deep spiritual guidance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#1f2937",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["lifestyle", "entertainment", "spirituality"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tarot Arcana Home Screen"
+    }
+  ]
+}
