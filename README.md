@@ -1,184 +1,142 @@
 # Tarot Arcana
 
-An esoteric tarot reading application rooted in Western mystical traditions, featuring AI-powered interpretations based on Golden Dawn, Thelemic, and Rider-Waite systems.
+A quiet tarot reader for a daily card, focused spreads, optional traditional correspondences, and private reflection.
 
-## Features
+[Open Tarot Arcana](https://tarot.julianduque.co)
 
-### 🔮 Reading Types
-- **One Card Reading** - Simple wisdom for daily guidance
-- **Three Card Reading** - Past, Present, and Future insights
-- **Celtic Cross** - Comprehensive 10-card spread for deep analysis
+## What it includes
 
-### ✨ Key Features
-- **Authentic Card Selection** - Realistic shuffle, cut, and draw experience
-- **AI-Powered Interpretations** - Esoteric analysis using Mastra AI framework
-- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
-- **Professional UI** - Clean, mystical design with proper alchemical symbols
-- **Question-Focused Readings** - AI provides specific guidance for your questions
+- **Card of the Day** — one stable card per local calendar day and browser installation.
+- **One-card reading** — a direct look at the matter in front of you.
+- **Three-card reading** — past, present, and future.
+- **Celtic Cross** — Waite's ten-card pattern with an optional court-card significator.
+- **Layered study** — independently enable the full *Pictorial Key to the Tarot* text, alchemical elements, astrology, and Qabalistic correspondences.
+- **Focused interpretations** — a concise answer to the question followed by the central pattern, tension, and next step.
+- **Private notes** — a Markdown editor and renderer backed by browser storage. Readings and generated interpretations can be saved into notes without losing their structure.
+- **Light and dark themes** — warm paper by day and ink blue at night, with the selected theme kept in the browser.
+- **Responsive layouts** — the Celtic Cross and other reading surfaces adapt from wide screens to mobile without changing their reading order.
 
-## Technology Stack
+The interface and reading data are informed by the companion [Omarchy Tarot](https://github.com/julianduque/omarchy-tarot) project.
 
-- **Framework**: Next.js 15 with App Router
-- **AI Integration**: Mastra AI framework with OpenAI GPT-4
-- **Styling**: CSS with custom design system
-- **Language**: TypeScript for type safety
-- **Deployment**: Optimized for Vercel
+## Omarchy plugin
 
-## Getting Started
+Install the terminal-oriented companion on Omarchy with:
 
-### Prerequisites
-- Node.js 18+ 
-- pnpm (recommended) or npm
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd tarot-app
+omarchy plugin add https://github.com/julianduque/omarchy-tarot.git --enable
 ```
 
-2. Install dependencies:
+See the [Omarchy Tarot installation guide](https://github.com/julianduque/omarchy-tarot#install) for usage and requirements.
+
+## AI interpretations
+
+Interpretations run through a server action backed by Mastra and OpenAI. The browser submits only the question, reading type, enabled study layers, card IDs, orientations, and optional significator. Card meanings and spread positions are reconstructed from the application's canonical data on the server.
+
+The inference boundary includes:
+
+- Runtime validation for every submitted field, exact spread sizes, valid card IDs, and unique cards.
+- Instruction-like question screening and escaped, clearly separated reading data.
+- A tarot-only agent with no tools, one generation step, bounded output, no automatic retries, and response-shape validation.
+- No model prompt or response logging and no provider-side response storage request.
+- A five-minute cooldown enforced with a signed, HttpOnly browser identity and available network identity.
+- A privacy-preserving hashed safety identifier rather than personal information.
+
+Anonymous rate limiting is intentionally lightweight. A shared rate-limit store and authenticated user identity would be required for strict enforcement across multiple server instances.
+
+## Requirements
+
+- Node.js 22 or newer
+- pnpm 10
+- An OpenAI API key for generated interpretations
+
+Daily cards, manual card study, themes, readings, and notes work without an API key. Only generated interpretations require it.
+
+## Local development
+
 ```bash
+git clone git@github.com:julianduque/tarot-arcana.git
+cd tarot-arcana
 pnpm install
 ```
 
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
+Create an ignored `.env` file:
 
-Add your OpenAI API key to `.env.local`:
-```
+```dotenv
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-4. Run the development server:
+Start the development server:
+
 ```bash
 pnpm dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Building for Production
+## Checks
 
 ```bash
+pnpm lint
+pnpm exec tsc --noEmit
 pnpm build
-pnpm start
+pnpm audit --prod
 ```
 
-## Project Structure
+## Vercel
 
+Link the repository to its Vercel project, add the API key as a secret, and deploy:
+
+```bash
+vercel link
+vercel env add OPENAI_API_KEY production,preview,development --sensitive
+vercel deploy --prod
 ```
+
+The CLI prompts for the secret value. Local environment files and design-review artifacts are excluded from deployment by `.vercelignore`.
+
+## Project map
+
+```text
 src/
-├── app/                    # Next.js App Router pages
-│   ├── one-card/          # One card reading page
-│   ├── three-card/        # Three card reading page
-│   ├── celtic-cross/      # Celtic cross reading page
-│   ├── actions.ts         # Server actions for AI integration
-│   ├── globals.css        # Global styles
-│   └── layout.tsx         # Root layout with metadata
-├── components/            # Reusable React components
-│   ├── Navigation.tsx     # Main navigation component
-│   ├── CardSelection.tsx  # Card selection experience
-│   └── TarotCardModal.tsx # Card detail modal
-├── mastra/               # AI integration
-│   ├── agents/           # Tarot interpretation agents
-│   └── tools/            # AI tools and utilities
-└── tarotCards.ts         # Tarot card data and definitions
-
-public/
-├── cards/                # Tarot card images
-└── logo.png             # Application logo
+├── app/
+│   ├── actions.ts          # Validated server-side interpretation boundary
+│   ├── celtic-cross/       # Celtic Cross route
+│   ├── notes/              # Reading journal and notes
+│   ├── one-card/           # One-card route
+│   ├── readings/           # Spread index and Omarchy plugin guide
+│   └── three-card/         # Three-card route
+├── components/
+│   ├── DailyCard.tsx
+│   ├── MarkdownEditor.tsx
+│   ├── NotesJournal.tsx
+│   ├── ReadingExperience.tsx
+│   ├── StudyLayers.tsx
+│   └── ThemeToggle.tsx
+├── data/
+│   ├── cards.json          # Waite text and card correspondences
+│   └── spreads.json        # Canonical spread positions
+├── lib/
+│   ├── daily-card.ts
+│   ├── inference-guard.ts
+│   ├── journal.ts
+│   └── spreads.ts
+└── mastra/
+    └── agents/
+        └── tarot-agent.ts
 ```
 
-## AI Integration
+The visual identity and reusable interface rules are recorded in [`DESIGN.md`](./DESIGN.md).
 
-The application uses the Mastra AI framework to provide sophisticated tarot interpretations:
+## Card sources
 
-### Esoteric Agent
-The **Esoteric Tarot Oracle** agent provides interpretations based on:
-- **Golden Dawn Tradition**: Astrological and elemental correspondences
-- **Thelemic Approach**: Individual will and elemental dignities  
-- **Rider-Waite Symbolism**: Living symbols and mystical meanings
-- **Hermetic Synthesis**: Connecting macrocosm to microcosm
+Tarot Arcana includes the complete 78-card Rider–Waite–Smith deck, A. E. Waite's public-domain *Pictorial Key to the Tarot* text, traditional upright and reversed meanings, and Golden Dawn / Book T correspondences imported from the companion Omarchy project.
 
-### Interpretation Structure
-1. **The Oracle Speaks** - Direct answers to specific questions
-2. **The Great Work** - Advanced esoteric analysis
-3. **The Cards in Council** - Symbolic relationships
-4. **The Mysteries Revealed** - Individual card meanings
-5. **The Path of Return** - Practical spiritual guidance
-6. **The Closing Benediction** - Sacred conclusion
+## Privacy and use
 
-## Card Selection Experience
+Notes, reading history, the daily-card seed, and theme choice stay in the browser's local storage. Clearing site data removes them.
 
-The application features a realistic card selection process:
-
-1. **Focus Phase** - Mental preparation
-2. **Shuffle Phase** - Cards are shuffled with intention
-3. **Cut Phase** - Choose from three piles
-4. **Draw Phase** - Cards selected from chosen pile
-
-## Customization
-
-### Adding New Reading Types
-1. Create a new page in `src/app/[reading-type]/`
-2. Update the navigation in `src/components/Navigation.tsx`
-3. Add the reading type to the AI tool schema
-4. Update the home page cards
-
-### Styling
-The application uses a custom design system with CSS variables:
-- Colors: Antique gold theme with dark mystical background
-- Typography: Serif fonts for headings, sans-serif for body
-- Layout: Responsive grid system with proper spacing
-
-## Development Commands
-
-```bash
-# Development
-pnpm dev          # Start development server
-pnpm build        # Build for production
-pnpm start        # Start production server
-pnpm lint         # Run ESLint
-pnpm type-check   # Run TypeScript checks
-```
-
-## Environment Variables
-
-```bash
-OPENAI_API_KEY=           # Required: Your OpenAI API key
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## Tarot Card Data
-
-The application includes a complete set of 78 tarot cards with:
-- High-quality card images
-- Traditional meanings and reversed interpretations
-- Astrological correspondences
-- Elemental associations
-- Hebrew letter correspondences (for Major Arcana)
+Tarot Arcana is a reflective tool, not a substitute for medical, legal, financial, or other professional advice.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Tarot card images from the Rider-Waite tradition
-- AI interpretations powered by OpenAI GPT-4
-- Esoteric knowledge drawn from Golden Dawn and Thelemic traditions
-- Built with Next.js and the Mastra AI framework
-
----
-
-**Note**: This application is for entertainment and spiritual guidance purposes. Tarot readings should not be used as a substitute for professional advice in health, legal, or financial matters.
+[MIT](./LICENSE)
