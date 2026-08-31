@@ -1,0 +1,153 @@
+{
+ "schema": 1,
+ "spreads": {
+  "three-card": {
+   "id": "three-card",
+   "name": "Past, Present, Future",
+   "cards": 3,
+   "significator": false,
+   "columns": 3,
+   "rows": 1,
+   "provenance": "Position descriptions from A. E. Waite, The Pictorial Key to the Tarot (1911).",
+   "positions": [
+    {
+     "n": 1,
+     "label": "Past",
+     "from": 5,
+     "col": 0,
+     "row": 0,
+     "saying": "",
+     "description": "It gives the influence that is just passed, or is now passing away."
+    },
+    {
+     "n": 2,
+     "label": "Present",
+     "from": 1,
+     "col": 1,
+     "row": 0,
+     "saying": "",
+     "description": "This card gives the influence which is affecting the person or matter of inquiry generally, the atmosphere of it in which the other currents work."
+    },
+    {
+     "n": 3,
+     "label": "Future",
+     "from": 6,
+     "col": 2,
+     "row": 0,
+     "saying": "",
+     "description": "It shews the influence that is coming into action and will operate in the near future."
+    }
+   ]
+  },
+  "celtic-cross": {
+   "id": "celtic-cross",
+   "name": "Celtic Cross",
+   "cards": 10,
+   "significator": true,
+   "columns": 5.2,
+   "rows": 4,
+   "provenance": "A. E. Waite, The Pictorial Key to the Tarot (1911), Part III section 7, 'An Ancient Celtic Method of Divination'. Labels and descriptions are his.",
+   "positions": [
+    {
+     "n": 1,
+     "label": "That covers him",
+     "saying": "This covers him.",
+     "description": "This card gives the influence which is affecting the person or matter of inquiry generally, the atmosphere of it in which the other currents work.",
+     "col": 1.4,
+     "row": 1
+    },
+    {
+     "n": 2,
+     "label": "What crosses him",
+     "saying": "This crosses him.",
+     "description": "It shews the nature of the obstacles in the matter. If it is a favourable card, the opposing forces will not be serious, or it may indicate that something good in itself will not be productive of good in the particular connexion.",
+     "col": 1.4,
+     "row": 1,
+     "rotated": true
+    },
+    {
+     "n": 3,
+     "label": "What crowns him",
+     "saying": "This crowns him.",
+     "description": "It represents (a) the Querent's aim or ideal in the matter; (b) the best that can be achieved under the circumstances, but that which has not yet been made actual.",
+     "col": 1.4,
+     "row": 0
+    },
+    {
+     "n": 4,
+     "label": "What is beneath him",
+     "saying": "This is beneath him.",
+     "description": "It shews the foundation or basis of the matter, that which has already passed into actuality and which the Significator has made his own.",
+     "col": 1.4,
+     "row": 2
+    },
+    {
+     "n": 5,
+     "label": "What is behind him",
+     "saying": "This is behind him.",
+     "description": "It gives the influence that is just passed, or is now passing away.",
+     "col": 0.0,
+     "row": 1
+    },
+    {
+     "n": 6,
+     "label": "What is before him",
+     "saying": "This is before him.",
+     "description": "It shews the influence that is coming into action and will operate in the near future.",
+     "col": 2.8,
+     "row": 1
+    },
+    {
+     "n": 7,
+     "label": "Himself",
+     "saying": "",
+     "description": "The first of these, or the SEVENTH CARD of the operation, signifies himself—that is, the Significator—whether person or thing-and shews its position or attitude in the circumstances.",
+     "col": 4.2,
+     "row": 3
+    },
+    {
+     "n": 8,
+     "label": "His house",
+     "saying": "",
+     "description": "The EIGHTH CARD signifies his house, that is, his environment and the tendencies at work therein which have an effect on the matter—for instance, his position in life, the influence of immediate friends, and so forth.",
+     "col": 4.2,
+     "row": 2
+    },
+    {
+     "n": 9,
+     "label": "His hopes or fears",
+     "saying": "",
+     "description": "The NINTH CARD gives his hopes or fears in the matter.",
+     "col": 4.2,
+     "row": 1
+    },
+    {
+     "n": 10,
+     "label": "What will come",
+     "saying": "",
+     "description": "The TENTH is what will come, the final result, the culmination which is brought about by the influences shewn by the other cards that have been turned up in the divination.",
+     "col": 4.2,
+     "row": 0
+    }
+   ],
+   "significatorSlot": {
+    "col": 0.0,
+    "row": 3
+   },
+   "significatorGuide": {
+    "ranks": {
+     "knight": "a man of forty years old and upward",
+     "king": "any male who is under that age",
+     "queen": "a woman who is over forty years",
+     "page": "any female of less age"
+    },
+    "suits": {
+     "wands": "very fair people, with yellow or auburn hair, fair complexion and blue eyes",
+     "cups": "people with light brown or dull fair hair and grey or blue eyes",
+     "swords": "people having hazel or grey eyes, dark brown hair and dull complexion",
+     "pentacles": "persons with very dark brown or black hair, dark eyes and sallow or swarthy complexions"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-31T12:39:55-04:00",
+  "title": "Design System: Tarot Arcana",
+  "extensions": {
+    "colorMeta": {
+      "ink-ground": {
+        "role": "neutral",
+        "displayName": "Ink Ground",
+        "canonical": "#20232f",
+        "tonalRamp": ["oklch(15% 0.018 273)", "oklch(26% 0.018 273)", "oklch(38% 0.018 273)", "oklch(50% 0.018 273)", "oklch(62% 0.018 273)", "oklch(74% 0.018 273)", "oklch(86% 0.018 273)", "oklch(95% 0.018 273)"]
+      },
+      "deep-ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#191c26",
+        "tonalRamp": ["oklch(15% 0.016 273)", "oklch(26% 0.016 273)", "oklch(38% 0.016 273)", "oklch(50% 0.016 273)", "oklch(62% 0.016 273)", "oklch(74% 0.016 273)", "oklch(86% 0.016 273)", "oklch(95% 0.016 273)"]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f1eee8",
+        "tonalRamp": ["oklch(15% 0.009 80)", "oklch(26% 0.009 80)", "oklch(38% 0.009 80)", "oklch(50% 0.009 80)", "oklch(62% 0.009 80)", "oklch(74% 0.009 80)", "oklch(86% 0.009 80)", "oklch(95% 0.009 80)"]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#b5b6be",
+        "tonalRamp": ["oklch(15% 0.012 273)", "oklch(26% 0.012 273)", "oklch(38% 0.012 273)", "oklch(50% 0.012 273)", "oklch(62% 0.012 273)", "oklch(74% 0.012 273)", "oklch(86% 0.012 273)", "oklch(95% 0.012 273)"]
+      },
+      "dim-ink": {
+        "role": "neutral",
+        "displayName": "Dim Ink",
+        "canonical": "#868a97",
+        "tonalRamp": ["oklch(15% 0.018 273)", "oklch(26% 0.018 273)", "oklch(38% 0.018 273)", "oklch(50% 0.018 273)", "oklch(62% 0.018 273)", "oklch(74% 0.018 273)", "oklch(86% 0.018 273)", "oklch(95% 0.018 273)"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(241, 238, 232, 0.18)",
+        "tonalRamp": ["oklch(15% 0.009 80)", "oklch(26% 0.009 80)", "oklch(38% 0.009 80)", "oklch(50% 0.009 80)", "oklch(62% 0.009 80)", "oklch(74% 0.009 80)", "oklch(86% 0.009 80)", "oklch(95% 0.009 80)"]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "rgba(241, 238, 232, 0.42)",
+        "tonalRamp": ["oklch(15% 0.009 80)", "oklch(26% 0.009 80)", "oklch(38% 0.009 80)", "oklch(50% 0.009 80)", "oklch(62% 0.009 80)", "oklch(74% 0.009 80)", "oklch(86% 0.009 80)", "oklch(95% 0.009 80)"]
+      },
+      "focus-violet": {
+        "role": "primary",
+        "displayName": "Focus Violet",
+        "canonical": "#b58aef",
+        "tonalRamp": ["oklch(15% 0.145 303)", "oklch(26% 0.145 303)", "oklch(38% 0.145 303)", "oklch(50% 0.145 303)", "oklch(62% 0.145 303)", "oklch(74% 0.145 303)", "oklch(86% 0.145 303)", "oklch(95% 0.145 303)"]
+      },
+      "focus-violet-soft": {
+        "role": "primary",
+        "displayName": "Soft Focus Violet",
+        "canonical": "rgba(181, 138, 239, 0.15)",
+        "tonalRamp": ["oklch(15% 0.145 303)", "oklch(26% 0.145 303)", "oklch(38% 0.145 303)", "oklch(50% 0.145 303)", "oklch(62% 0.145 303)", "oklch(74% 0.145 303)", "oklch(86% 0.145 303)", "oklch(95% 0.145 303)"]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Danger Red",
+        "canonical": "#ef9a9a",
+        "tonalRamp": ["oklch(15% 0.105 25)", "oklch(26% 0.105 25)", "oklch(38% 0.105 25)", "oklch(50% 0.105 25)", "oklch(62% 0.105 25)", "oklch(74% 0.105 25)", "oklch(86% 0.105 25)", "oklch(95% 0.105 25)"]
+      },
+      "success": {
+        "role": "tertiary",
+        "displayName": "Saved Green",
+        "canonical": "#9ecf87",
+        "tonalRamp": ["oklch(15% 0.11 135)", "oklch(26% 0.11 135)", "oklch(38% 0.11 135)", "oklch(50% 0.11 135)", "oklch(62% 0.11 135)", "oklch(74% 0.11 135)", "oklch(86% 0.11 135)", "oklch(95% 0.11 135)"]
+      },
+      "card-back": {
+        "role": "neutral",
+        "displayName": "Card Back Blue-Black",
+        "canonical": "#242938",
+        "tonalRamp": ["oklch(15% 0.024 267)", "oklch(26% 0.024 267)", "oklch(38% 0.024 267)", "oklch(50% 0.024 267)", "oklch(62% 0.024 267)", "oklch(74% 0.024 267)", "oklch(86% 0.024 267)", "oklch(95% 0.024 267)"]
+      },
+      "dawn-ground": {
+        "role": "neutral",
+        "displayName": "Dawn Ground",
+        "canonical": "#f2efe8",
+        "tonalRamp": ["oklch(18% 0.01 80)", "oklch(30% 0.01 80)", "oklch(42% 0.01 80)", "oklch(54% 0.01 80)", "oklch(66% 0.01 80)", "oklch(78% 0.01 80)", "oklch(90% 0.01 80)", "oklch(96% 0.01 80)"]
+      },
+      "dawn-deep": {
+        "role": "neutral",
+        "displayName": "Dawn Deep Paper",
+        "canonical": "#e5ded2",
+        "tonalRamp": ["oklch(18% 0.018 75)", "oklch(30% 0.018 75)", "oklch(42% 0.018 75)", "oklch(54% 0.018 75)", "oklch(66% 0.018 75)", "oklch(78% 0.018 75)", "oklch(88% 0.018 75)", "oklch(94% 0.018 75)"]
+      },
+      "dawn-text": {
+        "role": "neutral",
+        "displayName": "Dawn Plum Ink",
+        "canonical": "#292633",
+        "tonalRamp": ["oklch(18% 0.022 304)", "oklch(30% 0.022 304)", "oklch(42% 0.022 304)", "oklch(54% 0.022 304)", "oklch(66% 0.022 304)", "oklch(78% 0.022 304)", "oklch(90% 0.022 304)", "oklch(96% 0.022 304)"]
+      },
+      "dawn-muted": {
+        "role": "neutral",
+        "displayName": "Dawn Muted Ink",
+        "canonical": "#625e68",
+        "tonalRamp": ["oklch(18% 0.018 304)", "oklch(30% 0.018 304)", "oklch(42% 0.018 304)", "oklch(54% 0.018 304)", "oklch(66% 0.018 304)", "oklch(78% 0.018 304)", "oklch(90% 0.018 304)", "oklch(96% 0.018 304)"]
+      },
+      "dawn-focus-violet": {
+        "role": "primary",
+        "displayName": "Dawn Focus Violet",
+        "canonical": "#6e3fa0",
+        "tonalRamp": ["oklch(18% 0.145 303)", "oklch(30% 0.145 303)", "oklch(42% 0.145 303)", "oklch(54% 0.145 303)", "oklch(66% 0.145 303)", "oklch(78% 0.12 303)", "oklch(90% 0.07 303)", "oklch(96% 0.035 303)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Route-level reading and notes titles." },
+      "headline": { "displayName": "Headline", "purpose": "Setup prompts, inspectors, and empty-state statements." },
+      "title": { "displayName": "Title", "purpose": "Revealed card names and primary content titles." },
+      "body": { "displayName": "Body", "purpose": "Default prose and concise interpretation." },
+      "body-ruled": { "displayName": "Ruled Body", "purpose": "Notes aligned to the notebook rule rhythm." },
+      "action": { "displayName": "Action", "purpose": "Text buttons and compact reading-row titles." },
+      "label": { "displayName": "Label", "purpose": "Uppercase navigation, metadata, headings, and positions." },
+      "section": { "displayName": "Section", "purpose": "Compact section landmarks at 16px." },
+      "prominent-label": { "displayName": "Prominent Label", "purpose": "High-emphasis labels at 18px." },
+      "small": { "displayName": "Small", "purpose": "Plugin guidance and supporting metadata at 11px." },
+      "meta": { "displayName": "Meta", "purpose": "Compact metadata and mobile navigation at 10px." },
+      "micro": { "displayName": "Micro", "purpose": "Dense spread geometry and constrained labels at 9px." },
+      "reading-title": { "displayName": "Reading Title", "purpose": "Focused reading titles at a fluid 24–38px." }
+    },
+    "shadows": [
+      { "name": "card-ambient", "value": "0 16px 42px rgba(4, 5, 10, 0.32)", "purpose": "The large revealed daily card only." },
+      { "name": "focus-halo", "value": "0 0 0 3px rgba(181, 138, 239, 0.28)", "purpose": "Visible keyboard focus on interactive controls." },
+      { "name": "selection-ring", "value": "0 0 0 2px rgba(181, 138, 239, 0.15)", "purpose": "The selected card in a spread." }
+    ],
+    "motion": [
+      { "name": "state-fast", "value": "160ms ease", "purpose": "Color, border, and background changes for ordinary interactive states." },
+      { "name": "card-turn", "value": "520ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Spread-card reveal from an 82-degree turn." },
+      { "name": "daily-card-turn", "value": "640ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The more prominent daily-card reveal." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Animation and transition duration under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "420px" },
+      { "name": "mobile", "value": "760px" },
+      { "name": "workspace", "value": "1080px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The bordered violet action used for the next deliberate step in a reading.",
+      "html": "<button class=\"ds-button-primary\" type=\"button\">Turn the card</button>",
+      "css": ".ds-button-primary { display:inline-flex; min-height:42px; align-items:center; justify-content:center; padding:10px 16px; cursor:pointer; border:1px solid var(--accent); border-radius:6px; background:transparent; color:var(--accent); font:500 13px/1.55 var(--font-mono); transition:border-color 160ms ease, background-color 160ms ease, color 160ms ease; } .ds-button-primary:hover { background:var(--accent-soft); color:var(--text); } .ds-button-primary:focus-visible { outline:1px solid var(--accent); outline-offset:3px; box-shadow:var(--focus); } .ds-button-primary:active { background:rgba(181,138,239,0.22); }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "A neutral outlined action for secondary reading controls.",
+      "html": "<button class=\"ds-button-quiet\" type=\"button\">New reading</button>",
+      "css": ".ds-button-quiet { display:inline-flex; min-height:42px; align-items:center; justify-content:center; padding:10px 16px; cursor:pointer; border:1px solid var(--line-strong); border-radius:6px; background:transparent; color:var(--text); font:500 13px/1.55 var(--font-mono); transition:border-color 160ms ease, background-color 160ms ease, color 160ms ease; } .ds-button-quiet:hover { border-color:var(--accent); background:var(--accent-soft); } .ds-button-quiet:focus-visible { outline:1px solid var(--accent); outline-offset:3px; box-shadow:var(--focus); } .ds-button-quiet:active { background:rgba(181,138,239,0.22); }"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "A compact destructive control reserved for deleting a local journal entry.",
+      "html": "<button class=\"ds-button-danger\" type=\"button\">Delete</button>",
+      "css": ".ds-button-danger { display:inline-flex; min-height:34px; align-items:center; justify-content:center; padding:6px 10px; cursor:pointer; border:1px solid rgba(239,154,154,0.45); border-radius:6px; background:transparent; color:var(--danger); font:500 13px/1.55 var(--font-mono); transition:border-color 160ms ease, background-color 160ms ease; } .ds-button-danger:hover { border-color:var(--danger); background:rgba(239,154,154,0.08); } .ds-button-danger:focus-visible { outline:1px solid var(--accent); outline-offset:3px; box-shadow:var(--focus); } .ds-button-danger:active { background:rgba(239,154,154,0.14); }"
+    },
+    {
+      "name": "Markdown Note Editor",
+      "kind": "input",
+      "refersTo": "markdown-editor",
+      "description": "A local reflection editor with Write, Split, and Preview modes sharing one Markdown renderer.",
+      "html": "<section class=\"ds-markdown-editor\"><header>Note <span><button>Write</button><button aria-pressed=\"true\">Split</button><button>Preview</button></span></header><div><textarea aria-label=\"Note\"></textarea><article aria-label=\"Note preview\"></article></div></section>",
+      "css": ".ds-markdown-editor { overflow:hidden; border:1px solid var(--line-strong); border-radius:6px; } .ds-markdown-editor header { display:flex; min-height:42px; align-items:center; justify-content:space-between; padding:6px 8px 6px 13px; border-bottom:1px solid var(--line); background:var(--field-background); } .ds-markdown-editor > div { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); min-height:260px; } .ds-markdown-editor textarea, .ds-markdown-editor article { min-width:0; padding:16px; background:transparent; color:var(--text); } .ds-markdown-editor textarea { border:0; border-right:1px solid var(--line); resize:vertical; }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "description": "A compact text navigation on one hairline with a violet current-state underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary navigation\"><a class=\"ds-nav-brand\" href=\"#\">Tarot Arcana</a><span class=\"ds-nav-links\"><a class=\"ds-nav-link ds-is-current\" href=\"#\">Today</a><a class=\"ds-nav-link\" href=\"#\">Readings</a><a class=\"ds-nav-link\" href=\"#\">Notes</a></span></nav>",
+      "css": ".ds-nav { display:flex; min-height:70px; align-items:stretch; justify-content:space-between; border-bottom:1px solid var(--line); font-family:var(--font-mono); } .ds-nav a { display:inline-flex; position:relative; align-items:center; color:var(--muted); text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; } .ds-nav-brand { color:var(--text) !important; font-size:16px; font-weight:500; } .ds-nav-links { display:flex; align-items:stretch; gap:48px; } .ds-nav-link { font-size:12px; transition:color 160ms ease; } .ds-nav-link:hover, .ds-nav-link.ds-is-current { color:var(--text); } .ds-nav-link.ds-is-current::after { position:absolute; right:0; bottom:-1px; left:0; height:2px; background:var(--accent); content:\"\"; } .ds-nav-link:focus-visible, .ds-nav-brand:focus-visible { outline:1px solid var(--accent); outline-offset:3px; box-shadow:var(--focus); } .ds-nav-link:active { color:var(--accent); }"
+    },
+    {
+      "name": "Reading Choice",
+      "kind": "custom",
+      "description": "One cell in the dedicated Readings route, combining count, spread geometry, label, description, and direction.",
+      "html": "<a class=\"ds-reading-row\" href=\"#\"><span class=\"ds-reading-count\">03</span><svg class=\"ds-spread-glyph\" viewBox=\"0 0 56 36\" aria-hidden=\"true\"><rect x=\"3\" y=\"7\" width=\"12\" height=\"26\" rx=\"1\"/><rect x=\"22\" y=\"3\" width=\"12\" height=\"30\" rx=\"1\"/><rect x=\"41\" y=\"7\" width=\"12\" height=\"26\" rx=\"1\"/></svg><span class=\"ds-reading-copy\"><strong>Past, present, future</strong><small>See the movement around a question</small></span><svg class=\"ds-row-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M14 7l5 5-5 5\"/></svg></a>",
+      "css": ".ds-reading-row { display:grid; grid-template-columns:32px 58px minmax(0,1fr) 24px; min-height:78px; align-items:center; gap:12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); color:var(--muted); text-decoration:none; font-family:var(--font-mono); transition:color 160ms ease, background-color 160ms ease; } .ds-reading-row:hover { color:var(--text); } .ds-reading-row:focus-visible { outline:1px solid var(--accent); outline-offset:3px; box-shadow:var(--focus); } .ds-reading-row:active { background:var(--accent-soft); } .ds-reading-count { color:var(--accent); font-size:12px; font-variant-numeric:tabular-nums; } .ds-spread-glyph { width:56px; height:36px; fill:none; stroke:currentColor; stroke-width:1; } .ds-reading-copy { display:grid; gap:2px; min-width:0; } .ds-reading-copy strong { color:var(--text); font-size:13px; font-weight:500; text-transform:uppercase; } .ds-reading-copy small { font-size:11px; } .ds-row-arrow { width:20px; height:20px; fill:none; stroke:currentColor; stroke-linecap:square; stroke-width:1.4; }"
+    },
+    {
+      "name": "Tarot Card Back",
+      "kind": "custom",
+      "description": "The authored violet-line card back used before a reading is revealed.",
+      "html": "<button class=\"ds-card-back\" type=\"button\" aria-label=\"Turn card\"><span class=\"ds-card-back-mark\" aria-hidden=\"true\"><span></span><i></i></span></button>",
+      "css": ".ds-card-back { position:relative; display:block; width:180px; aspect-ratio:300/520; overflow:hidden; cursor:pointer; border:1px solid var(--accent); border-radius:6px; background:#242938; color:var(--accent); transition:background-color 160ms ease, border-color 160ms ease; } .ds-card-back::before { position:absolute; inset:13px; border:1px solid currentColor; content:\"\"; } .ds-card-back:hover { background:#2c3141; } .ds-card-back:focus-visible { outline:1px solid var(--accent); outline-offset:3px; box-shadow:var(--focus); } .ds-card-back:active { background:#32384b; } .ds-card-back-mark { position:absolute; top:50%; left:50%; width:72px; height:72px; transform:translate(-50%,-50%) rotate(45deg); } .ds-card-back-mark::before, .ds-card-back-mark::after, .ds-card-back-mark span, .ds-card-back-mark i { position:absolute; background:currentColor; content:\"\"; } .ds-card-back-mark::before { top:0; bottom:0; left:50%; width:1px; } .ds-card-back-mark::after { top:50%; right:0; left:0; height:1px; } .ds-card-back-mark span { inset:20%; border:1px solid currentColor; background:transparent; } .ds-card-back-mark i { top:46%; left:46%; width:8%; height:8%; }"
+    },
+    {
+      "name": "Journal List Item",
+      "kind": "custom",
+      "description": "A full-width saved-reading selector that stays on the shared page ground.",
+      "html": "<button class=\"ds-journal-item ds-is-selected\" type=\"button\"><span class=\"ds-journal-date\">31 Aug 2026, 09:30</span><strong>Today’s card</strong><span>Temperance</span><small>Note added</small></button>",
+      "css": ".ds-journal-item { display:grid; width:260px; gap:7px; padding:22px 24px 22px 0; cursor:pointer; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--muted); text-align:left; font-family:var(--font-mono); transition:background-color 160ms ease, color 160ms ease; } .ds-journal-item:hover, .ds-journal-item.ds-is-selected { background:var(--accent-soft); color:var(--text); } .ds-journal-item.ds-is-selected { box-shadow:inset -2px 0 0 var(--accent); } .ds-journal-item:focus-visible { outline:1px solid var(--accent); outline-offset:3px; box-shadow:var(--focus); } .ds-journal-item:active { background:rgba(181,138,239,0.22); } .ds-journal-date { color:var(--muted); font-size:12px; letter-spacing:0.04em; } .ds-journal-item strong { color:var(--text); font-size:14px; font-weight:500; } .ds-journal-item > span:not(.ds-journal-date) { font-size:12px; } .ds-journal-item small { color:var(--accent); font-size:10px; text-transform:uppercase; letter-spacing:0.08em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Reader's Notebook, Dawn to Midnight",
+    "overview": "Tarot Arcana is a quiet working instrument with two composed settings: midnight ink for low ambient light and dawn paper for brighter reading. Warm monospaced notation and a small set of ruled controls recede behind the reading in both. Its atmosphere comes from restraint and continuity rather than occult decoration. Rider-Waite-Smith card art supplies the only dense texture and broad color spectrum.\n\nThe interface is compact, deliberate, and planar. Hairline divisions organize related tasks; muted copy stays subordinate; violet appears when the system needs attention, focus, or selection. Theme changes remap semantic roles rather than mechanically inverting the interface, and the visitor's choice is kept locally.",
+    "keyCharacteristics": [
+      "Composed midnight-ink and dawn-paper palettes built from the same semantic roles.",
+      "One monospaced family across display, reading, label, and control roles.",
+      "Hairline rules and open fields in place of decorative containers.",
+      "Muted violet reserved for interaction, selection, and focus.",
+      "Natural tarot imagery left visually dominant and uncropped.",
+      "Compact corners, brief transitions, and one deliberate card-turn motion."
+    ],
+    "rules": [
+      { "name": "The Violet Signal Rule", "body": "Violet marks action, focus, selection, or reading state; it is not a general decorative fill.", "section": "colors" },
+      { "name": "The Card Art Carries Color Rule", "body": "Keep the interface low-chroma so Rider-Waite-Smith imagery remains the only richly colored and textured material.", "section": "colors" },
+      { "name": "The Dawn / Midnight Rule", "body": "Theme changes remap semantic roles. Never invert card art, weaken violet's interaction meaning, or turn light mode into pure white and black.", "section": "colors" },
+      { "name": "The One Voice Rule", "body": "Use IBM Plex Mono throughout; create hierarchy with the established scale and casing before introducing any new typographic voice.", "section": "typography" },
+      { "name": "The Useful Line Rule", "body": "Keep explanatory and interpretive prose within 62–70ch so it reads as a concise note, not an essay wall.", "section": "typography" },
+      { "name": "The Rule Becomes Stack Rule", "body": "A desktop divider denotes a relationship, not a permanent column; below 760px it rotates into a horizontal boundary and preserves content order. The Celtic Cross is the exception: its geometry remains intact inside horizontal scroll.", "section": "layout" },
+      { "name": "The Deliberate Depth Rule", "body": "Daily and spread views begin with the card and its divinatory meaning. Notes, full Waite text, and correspondence systems appear only after an explicit action.", "section": "layout" },
+      { "name": "The Open Desk Rule", "body": "Prefer one shared ground with spacing and hairlines over nested cards or boxed dashboard modules.", "section": "layout" },
+      { "name": "The Flat Desk Rule", "body": "Surfaces remain planar; depth belongs to physical card art and explicit interaction states, never to decorative containers.", "section": "elevation" },
+      { "name": "The Six-Pixel Ceiling Rule", "body": "Functional controls and full-size tarot frames do not exceed a 6px radius; avoid pills and soft floating panels.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do let tarot artwork provide the broad color and texture while both interface palettes remain low-chroma.",
+      "Do use hairlines, open space, and shared ground to group tasks before adding a container.",
+      "Do reserve violet for action, current state, focus, and selection.",
+      "Do keep reflection Markdown locally framed and render it consistently in editor previews and the journal.",
+      "Do preserve visible keyboard focus and the shipped reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't introduce ornate fantasy framing, star fields, gradients, glassmorphism, or gold-on-purple occult styling.",
+      "Don't turn navigation, reading rows, or journal regions into elevated dashboard cards.",
+      "Don't add a second display typeface; the single monospaced voice is the identity.",
+      "Don't crop or color-treat Rider-Waite-Smith art as decoration; present the full card as source material.",
+      "Don't use pills, oversized radii, glyph-only navigation, or ornamental icons."
+    ]
+  }
+}

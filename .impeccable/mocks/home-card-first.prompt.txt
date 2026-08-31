@@ -1,0 +1,12 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop web app composition for Tarot Arcana, 1536×1024 landscape
+Primary request: Design the home and Card of the Day surface of a private tarot reading app. The world is a midnight reader's notebook translated from the supplied omarchy-tarot references.
+Input images: daily.png, journal.png, spread-three-card.png, and spread-celtic-cross.png are style and interaction references only. Carry over their ink-blue canvas, restrained violet focus rule, warm Rider-Waite card art, monospace annotations, compact controls, and generous dark space. Do not copy their QML panel shape, screenshot text, or desktop-shell chrome.
+Structure: a very slim top navigation line with Tarot Arcana at left and Today / Readings / Notes at right; below it, the first viewport is an asymmetric two-column reading desk. A large face-down tarot card dominates the left-center at roughly 360×620. On the right, a compact TODAY'S CARD label, current date, a short one-sentence ritual instruction, and one strong "Turn the card" action. At the lower edge, three quiet reading routes appear as a single typographic index, not cards in boxes. Show just enough of a recent note strip below the fold to prove continuity.
+Style/medium: production-grade web UI screenshot, semantic controls, editorial monospaced typography, crisp browser rendering
+Composition/framing: full desktop viewport, front-on, no device mockup, no browser chrome
+Lighting/mood: calm late-night focus, legible and utilitarian, card art is the emotional center
+Color palette: #20232f ink blue ground, #f1eee8 warm off-white text, #9f7aea muted violet focus, #7d8290 secondary text, card art retains natural aged paper colors
+Materials/textures: mostly flat matte digital surfaces; only the Rider-Waite card art has paper texture
+Text (verbatim): "TAROT ARCANA", "TODAY'S CARD", "MONDAY · 31 AUGUST", "A card for the day in front of you.", "Turn the card", "ONE CARD", "THREE CARD", "CELTIC CROSS", "NOTES"
+Constraints: clear Operate-mode app; visible keyboard focus; no fake statistics; no marketing hero; no glass panels; no decorative constellations; no gradients; no gold; no purple glow; no rounded card-grid dashboard; no emoji; no ornate serif headline; no watermark

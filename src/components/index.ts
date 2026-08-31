@@ -1,3 +1,2 @@
-export { TarotCardModal } from './TarotCardModal';
-export { Navigation } from './Navigation';
-export { CardSelection } from './CardSelection';
+export { Navigation } from "./Navigation";
+export { ThemeToggle } from "./ThemeToggle";

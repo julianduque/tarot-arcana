@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tarot Arcana">
+  <rect width="64" height="64" fill="#20232f" />
+  <rect
+    x="18.5"
+    y="8.5"
+    width="27"
+    height="47"
+    rx="2.5"
+    fill="none"
+    stroke="#f1eee8"
+    stroke-width="3"
+  />
+  <path
+    d="M32 18 35.5 28.5 42 32l-6.5 3.5L32 46l-3.5-10.5L22 32l6.5-3.5L32 18Z"
+    fill="#b58aef"
+  />
+</svg>

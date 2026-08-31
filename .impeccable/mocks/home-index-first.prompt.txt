@@ -1,0 +1,12 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop web app composition for Tarot Arcana, 1536×1024 landscape
+Primary request: Design the home and Card of the Day surface of a private tarot reading app. The world is a midnight reader's notebook translated from the supplied omarchy-tarot references.
+Input images: daily.png, journal.png, spread-three-card.png, and spread-celtic-cross.png are style and interaction references only. Carry over their ink-blue canvas, restrained violet focus rule, warm Rider-Waite card art, monospace annotations, compact controls, and generous dark space. Do not copy their QML panel shape, screenshot text, or desktop-shell chrome.
+Structure: a slim top navigation line with Tarot Arcana at left and Today / Readings / Notes at right. The main viewport is an editorial reading index occupying the left third: TODAY'S CARD first with a small date and action, followed by three numbered spread rows 01 One card, 03 Past / present / future, 10 Celtic Cross. The right two-thirds is a single oversized turned Rider-Waite Queen of Cups card, cropped tall and nearly full-height, with a narrow vertical annotation rail containing the card title, orientation, elemental symbol, one essential meaning, and "Write a note". A small local-note status sits at the bottom of the rail.
+Style/medium: production-grade web UI screenshot, semantic controls, editorial monospaced typography, crisp browser rendering
+Composition/framing: full desktop viewport, front-on, no device mockup, no browser chrome
+Lighting/mood: calm late-night focus, legible and utilitarian, card art is the emotional center
+Color palette: #20232f ink blue ground, #f1eee8 warm off-white text, #9f7aea muted violet focus, #7d8290 secondary text, card art retains natural aged paper colors
+Materials/textures: mostly flat matte digital surfaces; only the Rider-Waite card art has paper texture
+Text (verbatim): "TAROT ARCANA", "TODAY'S CARD", "MONDAY · 31 AUGUST", "Turn today's card", "01  ONE CARD", "03  PAST / PRESENT / FUTURE", "10  CELTIC CROSS", "QUEEN OF CUPS", "UPRIGHT · WATER", "Compassion, intuition, and steady attention.", "Write a note", "Saved locally"
+Constraints: clear Operate-mode app; visible keyboard focus; no fake statistics; no marketing hero; no glass panels; no decorative constellations; no gradients; no gold; no purple glow; no rounded card-grid dashboard; no emoji; no ornate serif headline; no nudity; no watermark
