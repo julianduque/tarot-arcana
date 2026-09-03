@@ -1,6 +1,7 @@
 "use client";
 
-import { tarotCards } from "../tarotCards";
+import { findCard } from "../tarotCards";
+import { cardAllowed, deckFor, type DeckOptions } from "./deck-options";
 import { localDateKey } from "./journal";
 
 interface DailyState {
@@ -33,14 +34,22 @@ function hash(value: string) {
   return result >>> 0;
 }
 
-export function getDailyState(): DailyState {
+function matchesOptions(state: DailyState, options: DeckOptions) {
+  const card = findCard(state.cardId);
+  if (!card) return false;
+  // A card already turned stays for the day even if the deck settings change afterwards.
+  if (state.isRevealed) return true;
+  return cardAllowed(card, options) && (options.reversals || !state.isReversed);
+}
+
+export function getDailyState(options: DeckOptions): DailyState {
   const date = localDateKey();
   const stored = window.localStorage.getItem(DAILY_KEY);
 
   if (stored) {
     try {
       const parsed = JSON.parse(stored) as DailyState;
-      if (parsed.date === date && tarotCards.some((card) => card.id === parsed.cardId)) {
+      if (parsed.date === date && matchesOptions(parsed, options)) {
         return parsed;
       }
     } catch {
@@ -48,13 +57,14 @@ export function getDailyState(): DailyState {
     }
   }
 
+  const deck = deckFor(options);
   const seed = getInstallationSeed();
   const cardHash = hash(`${seed}:${date}:card`);
   const orientationHash = hash(`${seed}:${date}:orientation`);
   const state: DailyState = {
     date,
-    cardId: tarotCards[cardHash % tarotCards.length].id,
-    isReversed: orientationHash % 2 === 0,
+    cardId: deck[cardHash % deck.length].id,
+    isReversed: options.reversals && orientationHash % 2 === 0,
     isRevealed: false,
   };
   window.localStorage.setItem(DAILY_KEY, JSON.stringify(state));

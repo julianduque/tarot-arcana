@@ -1233,6 +1233,34 @@ textarea:focus-visible {
   background: var(--accent);
 }
 
+.deck-options {
+  display: grid;
+  margin-top: 8px;
+}
+
+.reading-setup .deck-options .field-label {
+  margin-top: 36px;
+}
+
+.daily-card-copy .deck-options {
+  margin-top: 40px;
+}
+
+.daily-card-copy .deck-options .field-label {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.deck-options .layer-switches {
+  margin-top: 6px;
+}
+
+.deck-options-note {
+  margin-top: 10px;
+  color: var(--dim);
+  font-size: 11px;
+}
+
 .study-content {
   display: grid;
   gap: 20px;

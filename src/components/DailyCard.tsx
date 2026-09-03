@@ -10,6 +10,7 @@ import {
   upsertJournalEntry,
 } from "../lib/journal";
 import { tarotCards } from "../tarotCards";
+import { DeckOptionSwitches, useDeckOptions } from "./DeckOptions";
 import { MarkdownEditor } from "./MarkdownEditor";
 import { StudyLayers, useStudyLayers } from "./StudyLayers";
 
@@ -21,12 +22,14 @@ export function DailyCard() {
   const [noteOpen, setNoteOpen] = useState(false);
   const [studyOpen, setStudyOpen] = useState(false);
   const { layers, toggle } = useStudyLayers();
+  const { options: deckOptions, ready: deckReady, update: updateDeckOptions } = useDeckOptions();
 
   useEffect(() => {
+    if (!deckReady) return;
     let active = true;
     queueMicrotask(() => {
       if (!active) return;
-      const state = getDailyState();
+      const state = getDailyState(deckOptions);
       setDaily(state);
       const existing = loadJournal().find((entry) => entry.id === dailyEntryId());
       if (existing) {
@@ -37,7 +40,7 @@ export function DailyCard() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [deckReady, deckOptions]);
 
   const card = useMemo(
     () => (daily ? tarotCards.find((item) => item.id === daily.cardId) ?? null : null),
@@ -170,6 +173,7 @@ export function DailyCard() {
               <button className="button-primary" type="button" onClick={turnCard}>
                 Turn the card
               </button>
+              <DeckOptionSwitches options={deckOptions} onChange={updateDeckOptions} />
             </>
           )}
         </div>

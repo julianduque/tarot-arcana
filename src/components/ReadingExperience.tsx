@@ -12,7 +12,9 @@ import {
   noteIncludesInterpretation,
   upsertJournalEntry,
 } from "../lib/journal";
+import { deckFor } from "../lib/deck-options";
 import { findCard, tarotCards, type TarotCard } from "../tarotCards";
+import { DeckOptionSwitches, useDeckOptions } from "./DeckOptions";
 import { MarkdownEditor, MarkdownView } from "./MarkdownEditor";
 import { StudyLayers, useStudyLayers } from "./StudyLayers";
 
@@ -121,6 +123,7 @@ export function ReadingExperience({ kind, title, description, positions }: Readi
   const [isInterpreting, setIsInterpreting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { layers, toggle } = useStudyLayers();
+  const { options: deckOptions, update: updateDeckOptions } = useDeckOptions();
 
   const allRevealed = cards.length > 0 && cards.every((card) => card.isRevealed);
   const selectedCard = selectedIndex === null ? null : cards[selectedIndex];
@@ -177,14 +180,17 @@ export function ReadingExperience({ kind, title, description, positions }: Readi
   }
 
   function drawCards(nextSignificator: TarotCard | null) {
+    const deck = deckFor(deckOptions);
     const available = nextSignificator
-      ? tarotCards.filter((card) => card.id !== nextSignificator.id)
-      : tarotCards;
+      ? deck.filter((card) => card.id !== nextSignificator.id)
+      : deck;
     const nextCards = secureShuffle(available)
       .slice(0, positions.length)
       .map((card) => ({
         ...card,
-        isReversed: window.crypto.getRandomValues(new Uint8Array(1))[0] % 2 === 0,
+        isReversed:
+          deckOptions.reversals &&
+          window.crypto.getRandomValues(new Uint8Array(1))[0] % 2 === 0,
         isRevealed: false,
       }));
     const nextId = window.crypto.randomUUID();
@@ -347,6 +353,8 @@ export function ReadingExperience({ kind, title, description, positions }: Readi
             rows={3}
             placeholder="What should I understand about…"
           />
+
+          <DeckOptionSwitches options={deckOptions} onChange={updateDeckOptions} />
 
           {isCeltic && (
             <SignificatorChooser
