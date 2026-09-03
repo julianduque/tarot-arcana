@@ -1,0 +1,907 @@
+/* Tarot: The Hermetic Key — stylesheet in the Tarot Arcana design system. */
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/ibm-plex-mono-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fonts/ibm-plex-mono-latin-600-normal.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: dark;
+  --ground: #20232f;
+  --ground-deep: #191c26;
+  --surface: #282c39;
+  --surface-strong: #303543;
+  --text: #f1eee8;
+  --muted: #b5b6be;
+  --dim: #868a97;
+  --line: rgba(241, 238, 232, 0.18);
+  --line-strong: rgba(241, 238, 232, 0.42);
+  --accent: #b58aef;
+  --accent-soft: rgba(181, 138, 239, 0.15);
+  --danger: #ef9a9a;
+  --success: #9ecf87;
+  --focus: 0 0 0 3px rgba(181, 138, 239, 0.28);
+  --field-background: rgba(18, 20, 28, 0.2);
+  --note-rule: rgba(241, 238, 232, 0.1);
+  --card-back: #242938;
+  --card-back-hover: #2c3141;
+  --card-shadow: rgba(4, 5, 10, 0.32);
+  --danger-border: rgba(239, 154, 154, 0.45);
+  --danger-soft: rgba(239, 154, 154, 0.08);
+  --selection-text: #191c26;
+  --font-mono: "IBM Plex Mono", "Liberation Mono", monospace;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground: #f2efe8;
+  --ground-deep: #e5ded2;
+  --surface: #ebe5da;
+  --surface-strong: #ddd3c5;
+  --text: #292633;
+  --muted: #625e68;
+  --dim: #6e6976;
+  --line: rgba(41, 38, 51, 0.18);
+  --line-strong: rgba(41, 38, 51, 0.4);
+  --accent: #6e3fa0;
+  --accent-soft: rgba(110, 63, 160, 0.12);
+  --danger: #a43c47;
+  --success: #3c7138;
+  --focus: 0 0 0 3px rgba(110, 63, 160, 0.24);
+  --field-background: rgba(255, 255, 255, 0.26);
+  --note-rule: rgba(41, 38, 51, 0.11);
+  --card-back: #e5deea;
+  --card-back-hover: #ddd2e5;
+  --card-shadow: rgba(50, 40, 30, 0.2);
+  --danger-border: rgba(164, 60, 71, 0.42);
+  --danger-soft: rgba(164, 60, 71, 0.08);
+  --selection-text: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --ground: #f2efe8;
+    --ground-deep: #e5ded2;
+    --surface: #ebe5da;
+    --surface-strong: #ddd3c5;
+    --text: #292633;
+    --muted: #625e68;
+    --dim: #6e6976;
+    --line: rgba(41, 38, 51, 0.18);
+    --line-strong: rgba(41, 38, 51, 0.4);
+    --accent: #6e3fa0;
+    --accent-soft: rgba(110, 63, 160, 0.12);
+    --danger: #a43c47;
+    --success: #3c7138;
+    --focus: 0 0 0 3px rgba(110, 63, 160, 0.24);
+    --field-background: rgba(255, 255, 255, 0.26);
+    --note-rule: rgba(41, 38, 51, 0.11);
+    --card-back: #e5deea;
+    --card-back-hover: #ddd2e5;
+    --card-shadow: rgba(50, 40, 30, 0.2);
+    --danger-border: rgba(164, 60, 71, 0.42);
+    --danger-soft: rgba(164, 60, 71, 0.08);
+    --selection-text: #ffffff;
+  }
+}
+
+
+/* Course aliases onto the app palette. Lesson markup keeps the original
+   variable names; their values now come from Tarot Arcana's tokens. */
+:root {
+  --bg: var(--ground);
+  --fg: var(--text);
+  --fg-muted: var(--muted);
+  --accent-strong: var(--accent);
+  --rule: var(--line);
+  --code-bg: var(--surface);
+  --callout-bg: var(--surface);
+  --win-bg: var(--surface);
+  --win-border: var(--success);
+  --quiz-bg: var(--surface);
+  --quiz-border: var(--line);
+  --link: var(--accent);
+  --correct: var(--success);
+  --incorrect: var(--danger);
+  --gold: #d1b26b;
+  --card-frame: var(--line);
+}
+
+:root[data-theme="light"] {
+  --gold: #8a6a24;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --gold: #8a6a24;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  /* default any emoji-presentation Unicode (zodiac, planets) to text glyphs */
+  font-variant-emoji: text;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: var(--fg);
+}
+
+h1 { font-size: clamp(26px, 3.4vw, 38px); margin: 0 0 0.35rem; }
+
+h2 {
+  font-size: 20px;
+  margin-top: 2.75rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.35rem;
+}
+
+h3 { font-size: 16px; margin-top: 2rem; }
+
+p { margin: 1.1rem 0; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+a:visited { color: var(--link); }
+
+.meta {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 2rem;
+}
+
+.meta span { margin-right: 1.25rem; }
+
+.win-banner {
+  background: var(--win-bg);
+  border-left: 4px solid var(--win-border);
+  padding: 0.9rem 1.2rem;
+  margin: 1.5rem 0 2.5rem;
+  font-size: 1rem;
+}
+
+.win-banner strong { display: block; margin-bottom: 0.2rem; }
+
+.callout {
+  background: var(--callout-bg);
+  border-left: 4px solid var(--accent);
+  padding: 0.9rem 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.sidenote {
+  float: right;
+  clear: right;
+  width: 15rem;
+  margin-right: -18rem;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 76rem) {
+  .sidenote {
+    float: none;
+    width: auto;
+    margin: 0.6rem 0 1.2rem 1rem;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--rule);
+  }
+}
+
+code, pre {
+  font-size: 0.92rem;
+  background: var(--code-bg);
+  border-radius: 3px;
+}
+
+code { padding: 0.1em 0.35em; }
+
+pre {
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code { background: none; padding: 0; }
+
+blockquote {
+  margin: 1.2rem 0;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.citations {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.citations li { margin: 0.4rem 0; }
+
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+.followup {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--rule);
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+.crosslinks {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  margin-top: 1rem;
+}
+
+.crosslinks a { margin-right: 1rem; }
+
+/* Quiz widget (assets/quiz.js) */
+
+.quiz {
+  background: var(--quiz-bg);
+  border: 1px solid var(--quiz-border);
+  border-radius: 6px;
+  padding: 1.3rem 1.4rem;
+  margin: 1.75rem 0;
+}
+
+.quiz-q + .quiz-q {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px dashed var(--quiz-border);
+}
+
+.quiz-prompt {
+  font-weight: 600;
+  margin: 0 0 0.8rem;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quiz-options button {
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--quiz-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quiz-options button:hover:not(:disabled) { border-color: var(--accent); }
+
+.quiz-options button:disabled { cursor: default; opacity: 0.75; }
+
+.quiz-options button.correct {
+  border-color: var(--correct);
+  background: color-mix(in srgb, var(--correct) 15%, var(--bg));
+}
+
+.quiz-options button.incorrect {
+  border-color: var(--incorrect);
+  background: color-mix(in srgb, var(--incorrect) 15%, var(--bg));
+}
+
+.quiz-feedback {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.recall-card {
+  background: var(--quiz-bg);
+  border: 1px solid var(--quiz-border);
+  border-radius: 6px;
+  padding: 1.3rem 1.4rem;
+  margin: 1.75rem 0;
+}
+
+.recall-prompt { font-weight: 600; margin: 0 0 0.8rem; }
+
+.recall-reveal {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--quiz-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.recall-answer {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--quiz-border);
+}
+
+/* Course nav + progress (assets/course-nav.js) */
+
+.course-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.course-nav-top {
+  margin: -1rem 0 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--fg-muted);
+}
+
+.course-nav-index {
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.course-nav-position {
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+}
+
+.course-nav-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.course-nav-bottom a { text-decoration: none; }
+
+.course-nav-disabled { color: var(--fg-muted); }
+
+.course-progress-wrap { margin-top: 3rem; }
+
+.course-progress {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--rule);
+  overflow: hidden;
+}
+
+.course-progress-fill {
+  height: 100%;
+  background: var(--win-border);
+  border-radius: 3px;
+}
+
+.course-progress-label {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  margin: 0.4rem 0 0;
+}
+
+.course-lesson-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.course-lesson-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.course-lesson-list a {
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.course-lesson-done a { color: var(--fg-muted); }
+
+.course-lesson-track {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+/* ── Tarot: card figures ─────────────────────────────────────────── */
+
+/* A row of cards that wraps and centers. */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* A single card figure: image + caption. */
+figure.card {
+  margin: 0;
+  width: 9.5rem;
+  text-align: center;
+}
+
+figure.card.card-lg { width: 14rem; }
+
+figure.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--card-frame);
+  box-shadow: 0 3px 10px var(--card-shadow);
+  background: #fff;
+}
+
+figure.card figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--fg-muted);
+}
+
+figure.card figcaption strong {
+  display: block;
+  color: var(--fg);
+  font-size: 0.85rem;
+}
+
+/* A single centered hero card (e.g. the lesson's key image). */
+figure.card-hero {
+  margin: 2rem auto;
+  max-width: 15rem;
+}
+
+/* A dense gallery grid for showing many cards at once (e.g. all 22 trumps). */
+.card-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+  gap: 0.9rem;
+  margin: 2rem 0;
+}
+.card-gallery figure.card { width: auto; }
+.card-gallery figure.card figcaption { font-size: 0.68rem; margin-top: 0.35rem; }
+.card-gallery figure.card figcaption strong { font-size: 0.72rem; }
+
+/* ── Tarot: reusable spread-position diagrams ────────────────────────
+   A spread diagram is a set of card-shaped .slot boxes (number + label).
+   Use .spread for a simple centered row; use .spread-grid (set grid-template
+   inline per layout) for 2-D layouts like the cross, horseshoe, or wheel. */
+.spread {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1.6rem 0;
+}
+.spread-grid {
+  display: grid;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.6rem 0;
+}
+.slot {
+  border: 1.5px solid var(--gold);
+  border-radius: 5px;
+  background: var(--quiz-bg);
+  width: 4.7rem;
+  min-height: 6.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.3rem;
+}
+.slot .n {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--gold);
+}
+.slot .l {
+  font-weight: 500;
+  font-size: 0.62rem;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.18;
+  margin-top: 0.25rem;
+}
+.slot.wide { width: 6.4rem; }
+.slot.muted { border-style: dashed; opacity: 0.85; }
+/* a card laid across another (the "crossing" card) */
+.slot-cross-wrap { position: relative; display: inline-flex; }
+.slot-cross-wrap .slot-cross {
+  position: absolute;
+  inset: 0;
+  transform: rotate(90deg) scale(0.9);
+  border-style: dashed;
+  background: color-mix(in srgb, var(--gold) 12%, var(--quiz-bg));
+}
+.spread-caption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  margin: 0.4rem 0 0;
+}
+
+/* ── Tarot: homework / practice block ────────────────────────────── */
+.homework {
+  background: var(--win-bg);
+  border: 1px solid var(--win-border);
+  border-radius: 6px;
+  padding: 1.1rem 1.3rem 1.2rem;
+  margin: 2rem 0;
+}
+.homework h2, .homework h3 {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+  font-size: 1.05rem;
+  color: var(--win-border);
+}
+.homework .homework-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--win-border);
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+}
+.homework ol, .homework ul { margin: 0.6rem 0 0; padding-left: 1.3rem; }
+.homework li { margin: 0.55rem 0; }
+.homework li::marker { color: var(--win-border); }
+.homework .hw-why {
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+/* ── Tarot: learning-resources block (blue, "reference" feel) ──────── */
+.resources {
+  border: 1px solid var(--quiz-border);
+  border-left: 4px solid var(--link);
+  border-radius: 6px;
+  background: var(--quiz-bg);
+  padding: 1.1rem 1.3rem 1.2rem;
+  margin: 2.5rem 0 1.5rem;
+}
+.resources .resources-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--link);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+.resources ul { list-style: none; margin: 0; padding: 0; }
+.resources li { margin: 0.5rem 0; font-size: 0.95rem; }
+.resources li .rtype {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+  display: inline-block;
+  min-width: 6.6rem;
+  vertical-align: baseline;
+}
+.resources .rfree {
+  font-size: 0.72rem;
+  color: var(--correct);
+  letter-spacing: 0.02em;
+}
+.resources .rall {
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--quiz-border);
+  font-size: 0.85rem;
+}
+
+/* ── Tarot: reading-list page ──────────────────────────────────────── */
+.rl-entry {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.rl-spine { align-self: start; }
+.rl-spine img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--card-frame);
+  border-radius: 2px;
+  box-shadow: 0 2px 7px var(--card-shadow);
+  background: #fff;
+}
+@media (max-width: 520px) {
+  .rl-entry { grid-template-columns: 4rem 1fr; gap: 0.9rem; }
+}
+.rl-body h3 { margin: 0 0 0.1rem; font-size: 1.12rem; }
+.rl-body .rl-author {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg-muted);
+  margin: 0 0 0.5rem;
+}
+.rl-body p { margin: 0.4rem 0; font-size: 0.95rem; }
+.rl-how {
+  border-left: 3px solid var(--accent-soft);
+  padding-left: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+.rl-how b {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+.rl-links {
+  margin-top: 0.55rem;
+  font-size: 0.82rem;
+}
+.rl-links a { margin-right: 0.9rem; }
+.rl-badge {
+  display: inline-block;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 7px;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  vertical-align: 0.1em;
+}
+.rl-badge.free { color: var(--correct); }
+.rl-badge.d1 { color: var(--win-border); }
+.rl-badge.d2 { color: var(--gold); }
+:root:not([data-theme="light"]) .rl-badge.d2 { color: var(--gold); }
+.rl-badge.d3 { color: var(--accent); }
+.rl-badge.own { color: var(--link); }
+
+/* ── Tarot: esoteric "key" callout (gold) ────────────────────────── */
+.key {
+  background: color-mix(in srgb, var(--gold) 12%, var(--bg));
+  border-left: 4px solid var(--gold);
+  padding: 0.9rem 1.2rem;
+  margin: 1.5rem 0;
+}
+.key strong { color: var(--gold); }
+
+/* Esoteric glyphs (Hebrew letters, astro/alchemical symbols) inline. */
+.glyph {
+  font-size: 1.15em;
+  color: var(--gold);
+  font-weight: 600;
+  font-variant-emoji: text;
+}
+
+/* Alchemical element glyphs — the four classical triangles, drawn as crisp
+   inline SVG (via CSS mask so they inherit the surrounding text colour and
+   render regardless of font support). Used everywhere in place of emoji. */
+.el {
+  display: inline-block;
+  width: 0.82em;
+  height: 0.82em;
+  vertical-align: -0.06em;
+  background-color: var(--gold);
+  -webkit-mask: center / contain no-repeat;
+  mask: center / contain no-repeat;
+}
+
+/* Astrological glyphs (zodiac signs, planets) — gold, and forced to their
+   monochrome TEXT presentation (browsers default several to colour emoji). */
+.astro {
+  color: var(--gold);
+  font-variant-emoji: text;
+  font-feature-settings: "ss01";
+}
+.el-fire {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M12 3 L22 21 L2 21 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M12 3 L22 21 L2 21 Z'/%3E%3C/svg%3E");
+}
+.el-water {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M2 3 L22 3 L12 21 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M2 3 L22 3 L12 21 Z'/%3E%3C/svg%3E");
+}
+.el-air {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12 3 L22 21 L2 21 Z'/%3E%3Cline x1='6.8' y1='13.5' x2='17.2' y2='13.5'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12 3 L22 21 L2 21 Z'/%3E%3Cline x1='6.8' y1='13.5' x2='17.2' y2='13.5'/%3E%3C/svg%3E");
+}
+.el-earth {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M2 3 L22 3 L12 21 Z'/%3E%3Cline x1='6.8' y1='10.5' x2='17.2' y2='10.5'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M2 3 L22 3 L12 21 Z'/%3E%3Cline x1='6.8' y1='10.5' x2='17.2' y2='10.5'/%3E%3C/svg%3E");
+}
+
+/* ── Tarot: correspondence tables ────────────────────────────────── */
+table.corr {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.95rem;
+}
+table.corr th, table.corr td {
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+table.corr thead th {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg-muted);
+  border-bottom: 1px solid var(--accent-soft);
+}
+table.corr tbody tr:hover { background: var(--code-bg); }
+.table-scroll { overflow-x: auto; }
+
+/* ── Tarot: three-deck comparison grid ───────────────────────────── */
+.deck-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0;
+}
+.deck-compare .deck {
+  border: 1px solid var(--quiz-border);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  background: var(--quiz-bg);
+}
+.deck-compare .deck h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+.deck-compare .deck p { margin: 0; font-size: 0.9rem; color: var(--fg-muted); }
+
+@media print {
+  body { font-size: 11pt; max-width: none; }
+  .followup, .meta { display: none; }
+  a { color: inherit; text-decoration: none; }
+  figure.card img { box-shadow: none; }
+  .card-row { gap: 0.8rem; }
+}
+
+/* ── Site shell (mirrors the app's header and theme toggle) ─────────── */
+::selection { background: var(--accent); color: var(--selection-text); }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: var(--focus);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.site-nav {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 70px;
+  margin: 0 clamp(20px, 3.2vw, 52px);
+  border-bottom: 1px solid var(--line);
+}
+.site-brand, .site-nav-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.site-brand, .site-brand:visited { color: var(--text); font-size: 16px; font-weight: 500; }
+.site-nav-link:visited { color: var(--muted); }
+.site-nav-links { display: flex; align-items: stretch; gap: clamp(18px, 3vw, 48px); }
+.site-nav-actions { display: flex; align-items: center; gap: clamp(18px, 2vw, 32px); }
+.site-nav-link { position: relative; color: var(--muted); font-size: 12px; transition: color 160ms ease; }
+.site-nav-link:hover { color: var(--text); }
+.theme-toggle {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  place-items: center;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+.theme-toggle:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+.theme-icon { grid-area: 1 / 1; width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: square; stroke-width: 1.4; }
+.theme-icon-moon { display: none; }
+:root[data-theme="light"] .theme-icon-sun { display: none; }
+:root[data-theme="light"] .theme-icon-moon { display: block; }
+@media (max-width: 720px) {
+  .site-nav-links { display: none; }
+}
+
+main.course {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: clamp(40px, 7vh, 72px) clamp(20px, 3.2vw, 52px) 96px;
+}
+main.course > .meta:first-of-type { margin-top: 0; }
+.course-nav-top { margin-top: 0; }
+.course-progress-fill { background: var(--accent); }
+.quiz-options button, .recall-reveal { border-radius: 6px; transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease; }
+.quiz-options button:hover:not(:disabled), .recall-reveal:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+.course-lesson-list a, .course-nav-bottom a, .course-nav-index { color: var(--text); }
+.course-lesson-list a:hover, .course-nav-bottom a:hover { color: var(--accent); }
+.course-lesson-track, .course-nav-position, .meta { font-size: 11px; letter-spacing: 0.1em; }
+.win-banner { border-left-color: var(--accent); }

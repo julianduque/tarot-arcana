@@ -2,8 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async rewrites() {
+    return [{ source: "/course", destination: "/course/index.html" }];
+  },
   async headers() {
     return [
+      {
+        source: "/course/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
+      },
       {
         source: "/(.*)",
         headers: [
