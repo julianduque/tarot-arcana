@@ -3,267 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesson 0005 — The Tree of Life: The Deck's Blueprint</title>
+<title>Lesson 5 — The Tree of Life: A Golden Dawn Framework</title>
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="theme-color" content="#20232f">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <script>(function(){try{var saved=localStorage.getItem("tarot-arcana:theme");var theme=saved==="light"||saved==="dark"?saved:window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute("content",theme==="light"?"#f2efe8":"#20232f");}catch(_){}})();</script>
-<link rel="stylesheet" href="/course/assets/style.css?v=1">
-<style>
-/* Tree of Life diagram — schematic (not card art); themed via the shared palette. */
-.tree-fig { margin: 2rem auto; max-width: 24rem; }
-.tree-fig svg { width: 100%; height: auto; display: block; }
-.tree-path { stroke: var(--accent-soft); stroke-width: 2; }
-.tree-seph { fill: var(--bg); stroke: var(--gold); stroke-width: 2.5; }
-.tree-num { fill: var(--fg); font: 700 18px var(--font-mono); text-anchor: middle; dominant-baseline: central; }
-.tree-name { fill: var(--fg-muted); font: 600 10px var(--font-mono); text-anchor: middle; text-transform: uppercase; letter-spacing: 0.03em; }
-.tree-pillar { fill: var(--fg-muted); font: 600 9.5px var(--font-mono); text-anchor: middle; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.7; }
-</style>
+<link rel="stylesheet" href="/course/assets/style.css?v=3183a978d13b">
 </head>
 <body>
-<script src="/course/assets/shell.js"></script>
-<main class="course">
-
-<p class="meta"><span>Lesson 0005</span><span>Track: Correspondences</span><span>~16 min</span></p>
-<h1>The Tree of Life: The Deck's Blueprint</h1>
-
-<div class="win-banner">
-<strong>By the end of this lesson</strong>
-You'll see the single diagram that has been quietly organizing everything: the Qabalistic
-Tree of Life. Its ten spheres are your ten numbers, its four Worlds are your four suits,
-and its twenty-two paths are your twenty-two trumps. The whole 78-card deck is one map.
-</div>
-
-<h2>The promise being paid off</h2>
-<p>Twice now I've pointed forward — the pips are numbered by their "sephirah"
-(<a href="/course/lessons/0003-minor-pips-number-and-element.html">Lesson 3</a>), the trumps are "doors on
-the Tree of Life" (<a href="/course/lessons/0002-major-arcana-fools-journey.html">Lesson 2</a>). This is
-where those promises come due. The Tree of Life is the master diagram of Hermetic
-Qabalah, and the Golden Dawn built the entire tarot onto it. Learn the Tree and the
-deck's structure stops being a list to memorize and becomes a <em>place</em> you can
-navigate.<sup><a href="#c1">1</a></sup></p>
-
-<h2>The map</h2>
-<p>Ten spheres (<strong>sephiroth</strong>), numbered 1–10 from the crown down to the
-material world, joined by twenty-two <strong>paths</strong>, arranged in three vertical
-<strong>pillars</strong>:</p>
-
-<figure class="tree-fig">
-<svg viewBox="0 0 360 595" role="img" aria-label="The Qabalistic Tree of Life: ten numbered sephiroth in three pillars, joined by twenty-two paths.">
-<!-- 22 paths (drawn first, under the spheres) -->
-<g fill="none">
-<line class="tree-path" x1="180" y1="48" x2="272" y2="120"/>
-<line class="tree-path" x1="180" y1="48" x2="88" y2="120"/>
-<line class="tree-path" x1="180" y1="48" x2="180" y2="318"/>
-<line class="tree-path" x1="272" y1="120" x2="88" y2="120"/>
-<line class="tree-path" x1="272" y1="120" x2="180" y2="318"/>
-<line class="tree-path" x1="272" y1="120" x2="272" y2="250"/>
-<line class="tree-path" x1="88" y1="120" x2="180" y2="318"/>
-<line class="tree-path" x1="88" y1="120" x2="88" y2="250"/>
-<line class="tree-path" x1="272" y1="250" x2="88" y2="250"/>
-<line class="tree-path" x1="272" y1="250" x2="180" y2="318"/>
-<line class="tree-path" x1="272" y1="250" x2="272" y2="400"/>
-<line class="tree-path" x1="88" y1="250" x2="180" y2="318"/>
-<line class="tree-path" x1="88" y1="250" x2="88" y2="400"/>
-<line class="tree-path" x1="180" y1="318" x2="272" y2="400"/>
-<line class="tree-path" x1="180" y1="318" x2="180" y2="470"/>
-<line class="tree-path" x1="180" y1="318" x2="88" y2="400"/>
-<line class="tree-path" x1="272" y1="400" x2="88" y2="400"/>
-<line class="tree-path" x1="272" y1="400" x2="180" y2="470"/>
-<line class="tree-path" x1="272" y1="400" x2="180" y2="545"/>
-<line class="tree-path" x1="88" y1="400" x2="180" y2="470"/>
-<line class="tree-path" x1="88" y1="400" x2="180" y2="545"/>
-<line class="tree-path" x1="180" y1="470" x2="180" y2="545"/>
-</g>
-<!-- pillar labels -->
-<text class="tree-pillar" x="88" y="30">Severity</text>
-<text class="tree-pillar" x="180" y="30">Mildness</text>
-<text class="tree-pillar" x="272" y="30">Mercy</text>
-<!-- 10 sephiroth -->
-<g>
-<circle class="tree-seph" cx="180" cy="48" r="25"/><text class="tree-num" x="180" y="48">1</text><text class="tree-name" x="180" y="15">Kether</text>
-<circle class="tree-seph" cx="272" cy="120" r="25"/><text class="tree-num" x="272" y="120">2</text><text class="tree-name" x="272" y="83">Chokmah</text>
-<circle class="tree-seph" cx="88" cy="120" r="25"/><text class="tree-num" x="88" y="120">3</text><text class="tree-name" x="88" y="83">Binah</text>
-<circle class="tree-seph" cx="272" cy="250" r="25"/><text class="tree-num" x="272" y="250">4</text><text class="tree-name" x="272" y="213">Chesed</text>
-<circle class="tree-seph" cx="88" cy="250" r="25"/><text class="tree-num" x="88" y="250">5</text><text class="tree-name" x="88" y="213">Geburah</text>
-<circle class="tree-seph" cx="180" cy="318" r="25"/><text class="tree-num" x="180" y="318">6</text><text class="tree-name" x="180" y="356">Tiphareth</text>
-<circle class="tree-seph" cx="272" cy="400" r="25"/><text class="tree-num" x="272" y="400">7</text><text class="tree-name" x="272" y="437">Netzach</text>
-<circle class="tree-seph" cx="88" cy="400" r="25"/><text class="tree-num" x="88" y="400">8</text><text class="tree-name" x="88" y="437">Hod</text>
-<circle class="tree-seph" cx="180" cy="470" r="25"/><text class="tree-num" x="180" y="470">9</text><text class="tree-name" x="242" y="470">Yesod</text>
-<circle class="tree-seph" cx="180" cy="545" r="25"/><text class="tree-num" x="180" y="545">10</text><text class="tree-name" x="180" y="583">Malkuth</text>
-</g>
-</svg>
-<figcaption><strong>The Tree of Life</strong> — 10 sephiroth (Kether → Malkuth), 22 paths, 3 pillars. The standard Golden Dawn (Kircher) arrangement.</figcaption>
-</figure>
-
-<h2>Three mappings — the whole deck, placed</h2>
-
-<h3>1. The ten sephiroth = the ten numbers</h3>
-<p>Each numbered pip <em>is</em> its sephirah. That's why, in
-<a href="/course/lessons/0003-minor-pips-number-and-element.html">Lesson 3</a>, five meant conflict
-(Geburah, Severity) and six meant harmony (Tiphareth, Beauty, the balanced centre). An
-<strong>Ace sits at Kether</strong> — the crown, pure potential — so it's the undivided
-root of its element. A <strong>Ten sits at Malkuth</strong> — the kingdom — so it's the
-element fully manifest in the material world. The number line you learned is a
-<em>descent down the Tree</em>, from crown to ground.</p>
-
-<h3>2. The four Worlds = the four suits</h3>
-<p>The Tree exists in four "Worlds" — descending levels of reality. Each is one of your
-suits/elements. So the forty pips are the ten sephiroth expressed four times over, once in
-each World:</p>
-<div class="table-scroll">
-<table class="corr">
-<thead>
-<tr><th>World</th><th>Meaning</th><th>Suit</th><th>Element</th></tr>
-</thead>
-<tbody>
-<tr><td>Atziluth</td><td>Emanation — pure archetype</td><td>Wands</td><td>Fire <span class="el el-fire" title="Fire" aria-hidden="true"></span></td></tr>
-<tr><td>Briah</td><td>Creation — the mind of the divine</td><td>Cups</td><td>Water <span class="el el-water" title="Water" aria-hidden="true"></span></td></tr>
-<tr><td>Yetzirah</td><td>Formation — the astral, forces taking shape</td><td>Swords</td><td>Air <span class="el el-air" title="Air" aria-hidden="true"></span></td></tr>
-<tr><td>Assiah</td><td>Action — the physical, manifest world</td><td>Pentacles</td><td>Earth <span class="el el-earth" title="Earth" aria-hidden="true"></span></td></tr>
-</tbody>
-</table>
-</div>
-<p>Ten sephiroth × four Worlds = <strong>40 pips</strong>. The system is that tight.</p>
-
-<h3>3. The twenty-two paths = the twenty-two trumps</h3>
-<p>The paths are the <em>lines</em> connecting the spheres — the channels of movement
-between states. Each of the 22 Major Arcana is one path, so a trump is always about
-<em>transition</em>: the energy that carries you from one sephirah to another. The Fool
-(path 11) joins Kether to Chokmah — the very first step out of unity. Each trump also
-takes one <strong>Hebrew letter</strong> and one <strong>astrological</strong>
-attribution, all laid out on the <a href="/course/reference/correspondences.html">master
-correspondence sheet</a>.</p>
-
-<p class="sidenote">The sixteen court cards live on the Tree too — the Golden Dawn seats
-the Kings/Knights at Chokmah, Queens at Binah, Princes at Tiphareth, Princesses at
-Malkuth. We'll return to that; for now, hold the big three mappings.</p>
-
-<div class="key">
-<strong>Why this is the master key.</strong> Numbers, suits, trumps, Hebrew letters,
-planets, zodiac signs, elements — every correspondence in tarot is ultimately a
-<em>coordinate on this one diagram</em>. Once a card has a place on the Tree, all its
-other attributions follow. This is the spine your whole mission is built around.
-</div>
-
-<h2>Check your understanding</h2>
-<div class="quiz">
-
-<div class="quiz-q" data-answer="a">
-<p class="quiz-prompt">The ten sephiroth of the Tree correspond to the deck's —</p>
-<div class="quiz-options">
-<button data-choice="a">ten numbered pips per suit</button>
-<button data-choice="b">ten court cards per suit</button>
-<button data-choice="c">ten trump cards per suit</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>Each pip number is its sephirah — Ace = Kether, Ten = Malkuth, all the way down.</p>
-</div>
-
-<div class="quiz-q" data-answer="a">
-<p class="quiz-prompt">The twenty-two paths of the Tree correspond to the —</p>
-<div class="quiz-options">
-<button data-choice="a">22 cards of the Major Arcana</button>
-<button data-choice="b">22 pips of the Minor Arcana</button>
-<button data-choice="c">22 courts of the four suits</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>Each trump is a path — a channel of transition between two sephiroth.</p>
-</div>
-
-<div class="quiz-q" data-answer="a">
-<p class="quiz-prompt">The four Qabalistic Worlds map onto the deck's —</p>
-<div class="quiz-options">
-<button data-choice="a">four suits, one World each</button>
-<button data-choice="b">four aces, one World each</button>
-<button data-choice="c">four courts, one World each</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>Wands = Atziluth, Cups = Briah, Swords = Yetzirah, Pentacles = Assiah. 10 × 4 = 40 pips.</p>
-</div>
-
-<div class="quiz-q" data-answer="b">
-<p class="quiz-prompt">Because an Ace sits at Kether, it represents its element's —</p>
-<div class="quiz-options">
-<button data-choice="a">final form and full manifestation</button>
-<button data-choice="b">pure root and first potential</button>
-<button data-choice="c">deepest crisis and hardest loss</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>Kether is the crown — undivided source. Full manifestation is Malkuth, the Ten.</p>
-</div>
-
-</div>
-
-<h2>Retrieval practice</h2>
-<div class="recall-card">
-<p class="recall-prompt">From memory: state the three mappings between the Tree and the deck.</p>
-<button class="recall-reveal">Reveal answer</button>
-<div class="recall-answer" hidden>
-<ol>
-<li><strong>10 sephiroth</strong> = the 10 numbers (Ace = Kether … Ten = Malkuth).</li>
-<li><strong>4 Worlds</strong> = the 4 suits (10 × 4 = 40 pips).</li>
-<li><strong>22 paths</strong> = the 22 Major Arcana (each trump a transition).</li>
-</ol>
-</div>
-</div>
-
-<div class="recall-card">
-<p class="recall-prompt">Which World, and which element, goes with each suit?</p>
-<button class="recall-reveal">Reveal answer</button>
-<div class="recall-answer" hidden>
-<p>Wands = <strong>Atziluth</strong> / Fire · Cups = <strong>Briah</strong> / Water ·
-Swords = <strong>Yetzirah</strong> / Air · Pentacles = <strong>Assiah</strong> / Earth.</p>
-</div>
-</div>
-
-<div class="homework">
-<p class="homework-tag">Practice before the next lesson</p>
-<h2>Homework</h2>
-<ol>
-<li><strong>Draw the Tree from memory.</strong> Ten circles, three pillars, numbered 1–10
-from Kether at the crown to Malkuth at the base. Then check it against the diagram above.
-Redraw once more without looking.</li>
-<li><strong>Descend a suit.</strong> Lay one suit's Ace → Ten onto your drawn Tree, Ace on
-Kether down to Ten on Malkuth. Read the story of that element descending from pure
-potential into full material form.</li>
-<li><strong>Trace a trump as a path.</strong> Pick any Major, look up the two sephiroth it
-connects on the <a href="/course/reference/correspondences.html">correspondence sheet</a>, and
-draw that line on your Tree. Notice which two states it bridges.</li>
-<li><strong>Read the primary source:</strong> the opening chapters of Dion Fortune's
-<em>The Mystical Qabalah</em> (on the sephiroth), or Robert Wang's <em>The Qabalistic
-Tarot</em> if you have it — the definitive tarot-on-the-Tree text.</li>
-</ol>
-<p class="hw-why">Why draw it by hand, twice: constructing the diagram yourself (not just
-viewing it) is what moves it from recognition into durable, usable memory.</p>
-</div>
-
-<div class="resources">
-<p class="resources-tag">Learning resources</p>
-<ul>
-<li><span class="rtype">Go deeper</span> <a href="/course/reference/reading-list.html">Wang, The Qabalistic Tarot</a> — every card mapped onto the Tree of Life — the on-mission text for this track.</li>
-<li><span class="rtype">Go deeper</span> <a href="/course/reference/reading-list.html">Fortune, The Mystical Qabalah</a> — the sephiroth and paths as a living system.</li>
-<li class="rall"><a href="/course/reference/reading-list.html">The full annotated reading list →</a></li>
-</ul>
-</div>
-
-<ol class="citations">
-<li id="c1">Robert Wang, <em>The Qabalistic Tarot</em> — tarot mapped systematically onto the Tree of Life; the source framework for this lesson.</li>
-<li id="c2">Dion Fortune, <em>The Mystical Qabalah</em> — the sephiroth and paths as a living system.</li>
-</ol>
-
-<hr class="rule">
-
-<p class="crosslinks">
-<a href="/course/reference/glossary.html">Reference: Glossary</a>
-<a href="/course/reference/correspondences.html">Reference: Master correspondence sheet</a>
-<a href="/course/lessons/0004-court-cards.html">← Lesson 4: The Court Cards</a>
-</p>
-
-<p class="followup">You now hold the master key — the diagram every correspondence hangs
-on. In the final lesson of this opening arc, you'll stop studying and <em>read</em>: your
-first real three-card spread, put together honestly and ethically. Want to trace a
-particular card onto the Tree first? Ask your teacher (me) directly.</p>
-
-<script src="/course/assets/quiz.js"></script>
-<script src="/course/manifest.js?v=1"></script>
-<script src="/course/assets/course-nav.js" data-current="0005-tree-of-life"></script>
-</main>
-</body>
-</html>
+<a class="skip-link" href="#main-content">Skip to content</a><script src="/course/assets/shell.js?v=0b2532f6a6d6"></script><main class="course" id="main-content"><h1>The Tree of Life: A Golden Dawn Framework</h1><p class="meta">Lesson 5 of 22 · Correspondences · Reading ~5 min · Practice separately</p><p class="lesson-intro">Read the Tree as a set of relationships: learn its ten spheres, three pillars, and the distinction between a sphere and a connecting path.</p><h2>What kind of map is this?</h2>
+<p>The Hermetic Tree of Life organizes relationships among divine names, numbers, planets, colours and other symbols. A sephirah is more than a keyword for a mood. In the cosmology, the spheres articulate aspects of manifestation; in tarot study, they provide a vocabulary for comparing the numbers and courts. Learning a diagram begins an inquiry into those relationships rather than proving a metaphysical claim.</p>
+<p>Hermetic Qabalah adapts material from Jewish Kabbalah through Christian and later Western esoteric traditions. These traditions overlap historically, but are not interchangeable. This course concentrates on the Golden Dawn-derived tarot application. The spelling “Qabalah” marks that focus; a spelling difference alone does not describe the diversity of the religious or esoteric traditions involved.</p>
+<h2>Ten spheres, three pillars</h2>
+<p>The diagram places Kether at the crown and Malkuth at the base. From the viewer’s perspective, Binah, Geburah and Hod lie on the left pillar of Severity; Chokmah, Chesed and Netzach lie on the right pillar of Mercy. Kether, Tiphareth, Yesod and Malkuth occupy the middle. The arrangement should be learned as relationships rather than a ladder of good and bad qualities.</p>
+<p>Mercy and Severity can be read as expansion and delimitation. An organization needs provision and structure, but also the ability to distinguish and refuse. Chesed without correction can become excess or rigidity; force without a sustaining purpose can become destructive. Tiphareth offers a model of mediation. This organizational example is a teaching analogy, not the definition of those sephiroth.</p>
+<section class="correspondence-explorer" data-correspondence-explorer data-diagram="tree" data-card="major-08"><h3>Explore the correspondences</h3><p class="tradition-note">Golden Dawn framework. RWS and Thoth names are shown separately. The diagram’s convention is always labelled.</p><noscript><p>The interactive selector requires JavaScript. The <a href="/course/reference/correspondences.html#static-tables">static correspondence tables</a> and lesson text remain available.</p></noscript></section>
+<h2>The spheres have a relational vocabulary</h2>
+<p>Read the descriptions below, then choose one pair to explain. Binah gives form and limit to force; Chokmah is a symbol of outpouring wisdom. Netzach and Hod invite comparison between desire and formulation, felt response and articulated account. Yesod concerns mediation and pattern; Malkuth concerns embodied consequences. None is dispensable. Treating the lower spheres as spiritually worthless would make manifestation itself unintelligible within the scheme.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Golden Dawn / Hermetic study framework — introductory descriptions"><table class="corr reference-table"><caption>Golden Dawn / Hermetic study framework — introductory descriptions</caption><thead><tr><th scope="col">Number</th><th scope="col">Sephirah</th><th scope="col">Meaning</th><th scope="col">Study question</th></tr></thead><tbody><tr><td>1</td><td>Kether</td><td>Crown</td><td>Source before differentiation; an Ace offers a beginning, not a completed result.</td></tr><tr><td>2</td><td>Chokmah</td><td>Wisdom</td><td>Outpouring force; the first polarity. A Two can reveal a relationship or tension.</td></tr><tr><td>3</td><td>Binah</td><td>Understanding</td><td>Form and limitation make expression possible. Form can sustain or constrain.</td></tr><tr><td>4</td><td>Chesed</td><td>Mercy</td><td>Coherence, order and provision. Ask when a stable arrangement becomes rigid.</td></tr><tr><td>5</td><td>Geburah</td><td>Severity</td><td>Discrimination, cutting away and force. Conflict may expose what cannot continue.</td></tr><tr><td>6</td><td>Tiphareth</td><td>Beauty</td><td>Mediation and a living centre. Harmony depends on relationships, not the absence of difference.</td></tr><tr><td>7</td><td>Netzach</td><td>Victory</td><td>Desire, attraction and persistence. Feeling moves us and can carry us beyond proportion.</td></tr><tr><td>8</td><td>Hod</td><td>Splendour</td><td>Language, classification and articulated form. A model can clarify experience or confine it.</td></tr><tr><td>9</td><td>Yesod</td><td>Foundation</td><td>Mediation through images, patterns and imagination. What gives experience a repeatable shape?</td></tr><tr><td>10</td><td>Malkuth</td><td>Kingdom</td><td>Embodied manifestation. Results have practical limits and consequences.</td></tr></tbody></table></div>
+<h2>Numbered pips belong to spheres</h2>
+<p>In the course framework, Ace through Ten correspond to Kether through Malkuth in each suit’s World. Five of Cups can therefore be examined as Geburah in the watery field. The Tree does not erase the particular card: its image, historical title and later astrology still matter. “Geburah in Water” supplies a question about force, discrimination or disruption in feeling; it does not specify exactly who has lost what.</p>
+<p>A Ten is associated with Malkuth even when the suit is Wands. Do not confuse “Earth as the suit” with “manifestation as the numerical level.” Ten of Wands is a manifestation of Fire in its suit’s framework; it does not become a Pentacles card. You will return to the distinction between levels and Worlds in lesson 16.</p>
+<h2>Trumps belong to connecting paths</h2>
+<p>The twenty-two connecting lines are numbered 11–32 in this framework. The numbering continues after the ten sephiroth: these are the ten spheres and twenty-two paths traditionally counted together as thirty-two paths of wisdom. A trump numeral is a different numbering system. The Fool is 0 on the card, while its Golden Dawn connecting path is 11.</p>
+<p>Choose Strength in the explorer. The highlighted Golden Dawn path joins Chesed and Geburah. One possible interpretation is a negotiation between sustaining and restraining force. That relationship enriches a reading of Smith’s woman and lion, but the line itself cannot tell you whether a querent should persist, yield or change method. You still need the image and the question.</p>
+<h2>Reading the diagram carefully</h2>
+<p>The Tree is not a conventional street map. Crossing lines do not create additional spheres. Daath, discussed by later writers as Knowledge, is not an eleventh numbered sephirah in this course’s ten-sphere chart. Likewise, the Lightning Flash you will study later traces an order of emanation; it should not be confused with the route of any one Major Arcana path.</p>
+<p>For now, learn ten names, their approximate arrangement, and the distinction between node and connection. Use the selector to identify the highlighted path and its two endpoints. You need not memorize all twenty-two paths today. A successful first drawing can be incomplete as long as you mark what needs checking and correct it deliberately.</p><h2>Check your reasoning</h2><p>These recognition checks support practice. They do not certify interpretive skill.</p><div class="quiz"><div class="quiz-q" data-answer="b"><p class="quiz-prompt">Which statement describes the diagram accurately?</p><div class="quiz-options"><button type="button" data-choice="a">Ten sephiroth correspond directly to the twenty-two trumps</button><button type="button" data-choice="b">Ten sephiroth are joined by twenty-two connecting paths</button><button type="button" data-choice="c">Twenty-two sephiroth are joined by ten connecting paths</button></div><p class="quiz-feedback" data-explain hidden>Pips map to numbers/sephiroth; trumps map to connecting paths.</p></div><div class="quiz-q" data-answer="a"><p class="quiz-prompt">What does the crossing of two lines indicate?</p><div class="quiz-options"><button type="button" data-choice="a">An overlap in the drawing unless a sphere is explicitly marked</button><button type="button" data-choice="b">An additional sephirah that must be added to the count</button><button type="button" data-choice="c">A new trump attribution shared by both paths</button></div><p class="quiz-feedback" data-explain hidden>Do not infer nodes from line crossings.</p></div><div class="quiz-q" data-answer="c"><p class="quiz-prompt">What differs between Ten of Wands and Ten of Pentacles?</p><div class="quiz-options"><button type="button" data-choice="a">Their sephirah, because the Ten changes between suits</button><button type="button" data-choice="b">Their number, because Fire cannot reach Malkuth</button><button type="button" data-choice="c">Their suit element and World, despite their shared number</button></div><p class="quiz-feedback" data-explain hidden>Both are Tens; the suit/World layer distinguishes their manifestation.</p></div></div><h2>Retrieve before revealing</h2><div class="recall-card"><p class="recall-prompt">Why are the connecting paths numbered 11–32?</p><button type="button" class="recall-reveal">Reveal discussion</button><div class="recall-answer" hidden><p>The traditional count includes ten sephiroth and twenty-two connecting paths. This numbering is distinct from the trumps’ printed numerals.</p></div></div><div class="recall-card"><p class="recall-prompt">Does a Five of Cups “being Geburah” remove the need to study its image?</p><button type="button" class="recall-reveal">Reveal discussion</button><div class="recall-answer" hidden><p>No. It places the card in a correspondence framework. The particular picture, textual tradition and reading position still shape its interpretation.</p></div></div><h2>Practice and spaced review</h2><ol><li>Draw ten circles in the three pillars, label them, then compare with the diagram and correct in a different colour.</li><li>Explain the distinction between Five of Cups at a sphere and Strength on a path.</li><li>Use one concrete situation to contrast Chesed/Geburah or Netzach/Hod. Label the example as your analogy.</li></ol><p>At your next session, recall one distinction from this lesson before opening it. Revisit it about a week later and again when a subsequent card study uses it. Mark uncertain material for review rather than treating a lookup as failure.</p><section class="source-reading"><h2>Read with the sources</h2><p><strong>Comparative practitioner commentary: <a href="/course/reference/reading-list.html#wang">Robert Wang, The Qabalistic Tarot</a>.</strong> Consult the Tree/Worlds discussion and the entries for your selected cards. Record the system and edition used for each table.</p><p><strong>Practitioner commentary: <a href="/course/reference/reading-list.html#fortune">Dion Fortune, The Mystical Qabalah</a>.</strong> Read the Three Supernals, the Four Worlds, and the selected sephirah chapters in your edition. Use Fortune as a Hermetic practitioner, not as a representative of every Jewish tradition.</p><p><strong>Primary historical publication: <a href="https://keepsilence.org/the-equinox/1.8/a-description-of-the-cards-of-the-tarot.pdf">The Equinox I:8 (1912), Liber LXXVIII: A Description of the Cards of the Tarot</a>.</strong> Consult the card’s named section and attribution table. This publication transmits Book T material with editorial interventions; it is not an untouched original manuscript.</p></section><footer class="study-footer"><p><a href="/course">Course index</a> · <a href="/course/reference/correspondences.html">Correspondences</a> · <a href="/course/reference/glossary.html">Glossary</a> · <a href="/course/reference/reading-list.html">Reading list</a></p></footer></main><script src="/course/manifest.js?v=eb506d1df816"></script><script src="/course/assets/correspondence-data.js?v=ad798c7719f8"></script><script src="/course/assets/course-nav.js?v=9c77de8ff190" data-current="0005-tree-of-life"></script><script src="/course/assets/quiz.js?v=68087eec738a"></script><script src="/course/assets/correspondences.js?v=5ccfe7c92c0f"></script></body></html>

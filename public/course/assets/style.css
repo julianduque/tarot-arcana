@@ -905,3 +905,146 @@ main.course > .meta:first-of-type { margin-top: 0; }
 .course-lesson-list a:hover, .course-nav-bottom a:hover { color: var(--accent); }
 .course-lesson-track, .course-nav-position, .meta { font-size: 11px; letter-spacing: 0.1em; }
 .win-banner { border-left-color: var(--accent); }
+
+/* Study edition: the app palette, readable comparisons and explicit traditions. */
+html { scroll-padding-top: 2rem; }
+main.course { max-width: 78ch; }
+h1, h2, h3 { text-wrap: balance; }
+main.course p, main.course li { overflow-wrap: anywhere; }
+main.course .meta { margin-top: 1rem; }
+a { text-underline-offset: .2em; }
+::selection { background: var(--accent); color: var(--selection-text); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+[hidden] { display: none !important; }
+.lesson-intro { color: var(--muted); font-size: 1.05rem; }
+.lesson-contents { margin: 1.5rem 0 2.5rem; border-block: 1px solid var(--line); padding-block: .7rem; }
+.lesson-contents summary, details.study-details > summary { cursor: pointer; min-height: 44px; padding-block: .6rem; }
+.lesson-contents ol { padding-left: 1.5rem; }
+.tradition-label { color: var(--accent); font-size: .8rem; font-weight: 600; letter-spacing: normal; margin: 0 0 .75rem; }
+.tradition-note { color: var(--muted); border: 1px solid var(--line); padding: 1rem; font-size: .88rem; }
+.study-button, .study-field select, .practice-record textarea {
+  font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 6px;
+}
+.study-button { min-height: 44px; padding: .6rem .9rem; cursor: pointer; margin: .5rem .5rem .5rem 0; }
+.study-button:hover { background: var(--accent-soft); border-color: var(--accent); }
+.study-field { display: flex; flex-direction: column; gap: .5rem; min-width: 0; font-size: .85rem; }
+.study-field select { width: 100%; min-height: 46px; padding: .6rem; }
+.explorer-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.explorer-controls .study-field:last-child { grid-column: 1 / -1; }
+.correspondence-explorer { margin-block: 2rem; padding-block: 1.5rem; border-block: 1px solid var(--line-strong); }
+.explorer-layout { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-block: 2rem; align-items: start; }
+.explorer-detail h3 { margin-top: 0; }
+.study-tree, .decan-wheel { display: block; width: 100%; height: auto; overflow: visible; }
+.path-hit { stroke: transparent; stroke-width: 18px; }
+.path-line { stroke: var(--line-strong); stroke-width: 2px; pointer-events: none; }
+[data-path-card], [data-decan-card] { cursor: pointer; }
+[data-path-card]:hover .path-line, [data-path-card]:focus .path-line, [data-path-card].selected .path-line { stroke: var(--accent); stroke-width: 6px; }
+.sphere { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2px; }
+[data-sphere].selected .sphere { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 3px; }
+.sphere-number { fill: var(--text); font-size: 19px; text-anchor: middle; font-weight: 600; }
+.sphere-label { fill: var(--text); font-size: 20px; text-anchor: middle; }
+.pillar-label { fill: var(--muted); font-size: 19px; text-anchor: middle; }
+.decan-sector { stroke: var(--ground); stroke-width: 2px; fill: var(--surface-strong); }
+[data-decan-card]:hover .decan-sector, [data-decan-card]:focus .decan-sector, [data-decan-card].selected .decan-sector { fill: var(--accent); }
+.sector-number { fill: var(--text); font-size: 15px; text-anchor: middle; pointer-events: none; }
+[data-decan-card].selected .sector-number, [data-decan-card]:hover .sector-number, [data-decan-card]:focus .sector-number { fill: var(--selection-text); }
+.sign-label { fill: var(--text); font-size: 16px; text-anchor: middle; }
+.wheel-centre { fill: var(--text); font-size: 22px; text-anchor: middle; }
+.wheel-sub { fill: var(--muted); font-size: 16px; text-anchor: middle; }
+.diagram-legend { font-size: .8rem; color: var(--muted); }
+.correspondence-facts { margin: 1rem 0; }
+.correspondence-facts dt { color: var(--muted); font-size: .78rem; margin-top: .9rem; }
+.correspondence-facts dd { margin: .15rem 0 0; font-size: .9rem; }
+.dignity-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; }
+.dignity-output { border-block: 1px solid var(--line); margin-top: 1rem; padding-block: 1rem; }
+.dignity-output h3 { margin-top: 0; }
+.card-study { margin-block: 3rem; padding-top: 2rem; border-top: 1px solid var(--line-strong); scroll-margin-top: 1.5rem; }
+.card-study > h3 { font-size: 1.4rem; }
+.card-study figure { margin: 0; }
+.card-study-intro { display: grid; grid-template-columns: minmax(7rem, .7fr) minmax(0, 1.6fr); gap: 1.5rem; align-items: start; }
+.card-study-intro img { display: block; width: 100%; max-width: 230px; height: auto; border-radius: 4px; }
+.card-study figcaption { font-size: .78rem; color: var(--muted); margin-top: .75rem; }
+.card-study h4 { margin: 1.75rem 0 .5rem; font-size: 1rem; font-weight: 600; }
+.card-study p { margin-block: .75rem 1rem; }
+.study-source-list { font-size: .8rem; color: var(--muted); }
+.study-source-list a { overflow-wrap: anywhere; }
+.study-details { margin-block: 1.25rem; border-block: 1px solid var(--line); }
+.study-details > summary { color: var(--accent); font-weight: 500; }
+.practice-record { margin-top: 3rem; padding-block: 1rem; border-top: 1px solid var(--line-strong); }
+.practice-record label { display: block; margin-block: 1rem .5rem; }
+.practice-record textarea { width: 100%; resize: vertical; padding: 1rem; line-height: 1.6; caret-color: var(--accent); }
+.practice-record .practice-check { display: flex; gap: .7rem; align-items: center; min-height: 44px; cursor: pointer; }
+.practice-check input { width: 20px; height: 20px; accent-color: var(--accent); }
+.save-status, .quiz-result { color: var(--muted); font-size: .85rem; }
+.source-reading { margin-block: 2rem; padding: 1.25rem; border: 1px solid var(--line); }
+.source-reading h2 { margin-top: 0; }
+.course-lesson-list li { display: block; padding-block: 1.15rem; }
+.course-lesson-list .course-lesson-track { display: block; margin-top: .45rem; line-height: 1.6; letter-spacing: 0; }
+.reference-table caption { text-align: left; color: var(--muted); margin-bottom: .7rem; }
+.table-scroll { max-width: 100%; }
+.table-scroll:focus-visible { outline-offset: 2px; }
+.reference-index { columns: 2; }
+.worked-reading { border-block: 1px solid var(--line); margin-block: 1.5rem; padding-block: .75rem; }
+@media (max-width: 640px) {
+  .explorer-layout { grid-template-columns: 1fr; }
+  .explorer-diagram { width: min(100%, 450px); margin-inline: auto; }
+  .explorer-controls { grid-template-columns: 1fr; }
+  .explorer-controls .study-field:last-child { grid-column: auto; }
+  .card-study-intro { grid-template-columns: 1fr; }
+  .card-study-intro figure { max-width: 190px; margin-inline: auto; }
+  .dignity-controls { grid-template-columns: 1fr; }
+  .reference-index { columns: 1; }
+  .course-nav-bottom { flex-direction: column; }
+}
+@media print {
+  .site-nav, .lesson-contents, .explorer-controls, .study-button, .practice-record, .quiz-options, .recall-reveal { display: none !important; }
+  .recall-answer[hidden], .quiz-feedback[hidden] { display: block !important; }
+  .card-study { break-inside: auto; }
+  .card-study-intro, .tree-fig, .explorer-diagram { break-inside: avoid; }
+  .study-details > :not(summary) { display: block !important; }
+  .explorer-layout { display: block; }
+  .explorer-diagram { max-width: 320px; }
+  .table-scroll { overflow: visible; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+
+.skip-link { position: fixed; top: -8rem; left: 1rem; z-index: 100; padding: .7rem 1rem; background: var(--bg); border: 2px solid var(--accent); }
+.skip-link:focus { top: 1rem; }
+.course-glossary dt { font-weight: 600; margin-top: 1.5rem; }
+.course-glossary dd { margin: .5rem 0 1.5rem; }
+.card-study-index { columns: 2; column-gap: 2rem; }
+.card-study-index li { break-inside: avoid; }
+.spread-grid .slot { width: auto; min-width: 0; min-height: 0; }
+.slot-n { font-size: 1.15rem; font-weight: 600; color: var(--accent); }
+.slot-label { font-size: .7rem; line-height: 1.25; overflow-wrap: anywhere; }
+.spread-grid .slot.crossing { align-self: end; z-index: 1; min-height: 2.6rem; margin: 0 -.35rem -.8rem; border-style: dashed; flex-direction: row; gap: .3rem; }
+.spread-grid:has(.crossing) .slot:first-child { justify-content: flex-start; padding-top: .6rem; padding-bottom: 3rem; }
+.spread-grid:has(.crossing) { gap: 1.4rem .7rem; }
+@media (max-width: 540px) { .card-study-index { columns: 1; } .spread-grid:has(.crossing) { gap: 1.4rem .4rem; } }
+
+.explorer-diagram { width: min(100%, 500px); margin-inline: auto; }
+.selection-caption { color: var(--accent); font-weight: 600; }
+.study-jumps { margin-block: 2rem; padding-block: 1rem; border-block: 1px solid var(--line); }
+.spread-grid .slot { border-color: var(--accent); }
+@media print {
+  main.course { width: 100%; max-width: none; margin: 0; padding: 0; }
+  table.corr { width: 100%; table-layout: fixed; font-size: 8.5pt; }
+  table.corr th, table.corr td { white-space: normal; overflow-wrap: anywhere; padding: .35rem; }
+  table.corr tr { break-inside: avoid; }
+}
+
+/* Retained teaching diagrams share the course's theme and explicit SVG paint. */
+.tree-fig, .elem-fig { margin: 2rem auto; width: 100%; max-width: 28rem; }
+.tree-fig svg, .elem-fig svg { display: block; width: 100%; height: auto; }
+.tree-path { stroke: var(--line-strong); stroke-width: 1.5; fill: none; }
+.tree-flash { stroke: var(--incorrect); stroke-width: 3; fill: none; }
+.tree-seph { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.tree-seph.fam { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.5; }
+.tree-num { fill: var(--text); font: 600 17px var(--font-mono); text-anchor: middle; dominant-baseline: central; }
+.tree-court { fill: var(--text); font: 500 14px var(--font-mono); text-anchor: middle; }
+.ef-node { fill: var(--surface); stroke: var(--accent); stroke-width: 2; }
+.ef-label { fill: var(--text); font: 600 13px var(--font-mono); text-anchor: middle; dominant-baseline: central; }
+.ef-friendly { stroke: var(--correct); stroke-width: 3; }
+.ef-contrary { stroke: var(--incorrect); stroke-width: 2.5; stroke-dasharray: 6 5; }
+.ef-neutral { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 2 5; }
+.ef-key { font: 500 11px var(--font-mono); }

@@ -1,64 +1,30 @@
-/* Reusable retrieval-practice widgets for lessons in this workspace.
-   Two shapes, both plain markup + data attributes, no build step:
-
-   1. Multiple choice (recognition):
-      <div class="quiz">
-        <div class="quiz-q" data-answer="b">
-          <p class="quiz-prompt">...</p>
-          <div class="quiz-options">
-            <button data-choice="a">...</button>
-            <button data-choice="b">...</button>
-          </div>
-          <p class="quiz-feedback" data-explain hidden>Why the answer is what it is.</p>
-        </div>
-      </div>
-
-   2. Free recall (retrieval, harder than recognition):
-      <div class="recall-card">
-        <p class="recall-prompt">Question to answer from memory first.</p>
-        <button class="recall-reveal">Reveal answer</button>
-        <div class="recall-answer" hidden>Answer text.</div>
-      </div>
-*/
-(function () {
-  function initMultipleChoice() {
-    document.querySelectorAll(".quiz-q").forEach(function (q) {
-      var answer = q.getAttribute("data-answer");
-      var buttons = q.querySelectorAll(".quiz-options button");
-      var feedback = q.querySelector(".quiz-feedback");
-
-      buttons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var picked = btn.getAttribute("data-choice");
-          buttons.forEach(function (b) { b.disabled = true; });
-          if (picked === answer) {
-            btn.classList.add("correct");
-          } else {
-            btn.classList.add("incorrect");
-            buttons.forEach(function (b) {
-              if (b.getAttribute("data-choice") === answer) b.classList.add("correct");
-            });
-          }
-          if (feedback) feedback.hidden = false;
-        });
-      });
+/* Recognition checks support retrieval; they do not certify reading skill. */
+(() => {
+  'use strict';
+  document.addEventListener('DOMContentLoaded', () => {
+    const slug = document.querySelector('script[data-current]')?.dataset.current;
+    document.querySelectorAll('.quiz-q').forEach((q,index) => {
+      const buttons=[...q.querySelectorAll('[data-choice]')];
+      // A response belongs to this question and these choices, even as lessons evolve.
+      const question=[q.querySelector('.quiz-prompt')?.textContent, ...buttons.map(b=>b.textContent), q.dataset.answer].join('\u001f');
+      const feedback=q.querySelector('[data-explain]');
+      const result=document.createElement('p');result.className='quiz-result';result.setAttribute('role','status');q.append(result);
+      const retry=document.createElement('button');retry.type='button';retry.textContent='Try again';retry.className='study-button';retry.hidden=true;q.append(retry);
+      function choose(choice,persist) {
+        if (!buttons.some(b=>b.dataset.choice===choice)) return;
+        for(const b of buttons){b.disabled=true;b.classList.toggle('correct',b.dataset.choice===q.dataset.answer);b.classList.toggle('incorrect',b.dataset.choice===choice&&choice!==q.dataset.answer);}
+        result.textContent=choice===q.dataset.answer?'Correct. Compare your reasoning with the explanation.':'Reconsider this answer. The explanation identifies the distinction.';
+        if(feedback)feedback.hidden=false;retry.hidden=false;
+        if(persist&&slug){const api=window.TarotCourseNav;const quiz={...(api.getState()[slug]?.quiz||{}),[index]:{choice,question}};api.updateLesson(slug,{quiz});}
+      }
+      for(const b of buttons)b.addEventListener('click',()=>choose(b.dataset.choice,true));
+      retry.addEventListener('click',()=>{for(const b of buttons){b.disabled=false;b.classList.remove('correct','incorrect');}if(feedback)feedback.hidden=true;result.textContent='';retry.hidden=true;if(slug){const api=window.TarotCourseNav;const quiz={...(api.getState()[slug]?.quiz||{})};delete quiz[index];api.updateLesson(slug,{quiz});}buttons[0]?.focus();});
+      const saved=window.TarotCourseNav?.getState()[slug]?.quiz?.[index];if(saved?.question===question)choose(saved.choice,false);
     });
-  }
-
-  function initRecallCards() {
-    document.querySelectorAll(".recall-card").forEach(function (card) {
-      var reveal = card.querySelector(".recall-reveal");
-      var answer = card.querySelector(".recall-answer");
-      if (!reveal || !answer) return;
-      reveal.addEventListener("click", function () {
-        answer.hidden = !answer.hidden;
-        reveal.textContent = answer.hidden ? "Reveal answer" : "Hide answer";
-      });
+    document.querySelectorAll('.recall-card').forEach(card=>{
+      const reveal=card.querySelector('.recall-reveal'), answer=card.querySelector('.recall-answer');if(!reveal||!answer)return;
+      reveal.setAttribute('aria-expanded','false');
+      reveal.addEventListener('click',()=>{answer.hidden=!answer.hidden;reveal.textContent=answer.hidden?'Reveal discussion':'Hide discussion';reveal.setAttribute('aria-expanded',String(!answer.hidden));});
     });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    initMultipleChoice();
-    initRecallCards();
   });
 })();

@@ -3,214 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesson 0010 — The Celtic Cross: The Ten-Card Spread</title>
+<title>Lesson 10 — The Celtic Cross: The Ten-Card Spread</title>
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="theme-color" content="#20232f">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <script>(function(){try{var saved=localStorage.getItem("tarot-arcana:theme");var theme=saved==="light"||saved==="dark"?saved:window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute("content",theme==="light"?"#f2efe8":"#20232f");}catch(_){}})();</script>
-<link rel="stylesheet" href="/course/assets/style.css?v=1">
-<style>
-/* Celtic Cross position diagram — schematic layout, themed via shared palette. */
-.celtic { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 4.2rem);
-  gap: 0.5rem; max-width: 26rem; margin: 2rem auto; }
-.cc { border: 1.5px solid var(--gold); border-radius: 5px; background: var(--quiz-bg);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 0.2rem; }
-.cc .n { font: 700 1rem var(--font-mono); color: var(--gold); }
-.cc .l { font: 500 0.62rem var(--font-mono); color: var(--fg-muted); line-height: 1.15; text-transform: uppercase; letter-spacing: 0.02em; }
-.cc-center { position: relative; }
-.cc-cross { position: absolute; inset: 0; transform: rotate(90deg) scale(0.92); border-style: dashed; background: color-mix(in srgb, var(--gold) 12%, var(--quiz-bg)); }
-</style>
+<link rel="stylesheet" href="/course/assets/style.css?v=3183a978d13b">
 </head>
 <body>
-<script src="/course/assets/shell.js"></script>
-<main class="course">
-
-<p class="meta"><span>Lesson 0010</span><span>Track: Reading Practice</span><span>~16 min</span></p>
-<h1>The Celtic Cross: The Ten-Card Spread</h1>
-
-<div class="win-banner">
-<strong>By the end of this lesson</strong>
-You'll know the ten positions of the Celtic Cross — the most widely used spread in tarot —
-what each one asks, and how to read the whole layout as one story, bringing together card
-meanings, positions, and the elemental dignities from
-<a href="/course/lessons/0009-elemental-dignities.html">Lesson 9</a>.
-</div>
-
-<h2>Why a bigger spread</h2>
-<p>Your three-card spread (<a href="/course/lessons/0006-your-first-reading.html">Lesson 6</a>) is perfect
-for a quick, focused question. The <strong>Celtic Cross</strong> is the workhorse for a
-fuller picture — past and future, inner and outer, hopes and likely outcome — in ten
-positions. It's the spread A. E. Waite laid out in the <em>Pictorial Key</em>, and it has
-been the standard ever since.<sup><a href="#c1">1</a></sup></p>
-
-<h2>The ten positions</h2>
-<p>A cross of six cards, and a "staff" of four read bottom to top beside it:</p>
-
-<div class="celtic" role="img" aria-label="Celtic Cross layout: a six-card cross on the left, a four-card staff on the right.">
-<!-- row 1 --><div></div><div class="cc" style="grid-column:2;grid-row:1"><span class="n">5</span><span class="l">Above / Goal</span></div><div></div><div class="cc" style="grid-column:4;grid-row:1"><span class="n">10</span><span class="l">Outcome</span></div>
-<!-- row 2 --><div class="cc" style="grid-column:1;grid-row:2"><span class="n">4</span><span class="l">Recent Past</span></div><div class="cc cc-center" style="grid-column:2;grid-row:2"><span class="n">1</span><span class="l">Present</span><div class="cc cc-cross"><span class="n">2</span></div></div><div class="cc" style="grid-column:3;grid-row:2"><span class="n">6</span><span class="l">Near Future</span></div><div class="cc" style="grid-column:4;grid-row:2"><span class="n">9</span><span class="l">Hopes &amp; Fears</span></div>
-<!-- row 3 --><div></div><div class="cc" style="grid-column:2;grid-row:3"><span class="n">3</span><span class="l">Foundation</span></div><div></div><div class="cc" style="grid-column:4;grid-row:3"><span class="n">8</span><span class="l">Environment</span></div>
-<!-- row 4 --><div></div><div></div><div></div><div class="cc" style="grid-column:4;grid-row:4"><span class="n">7</span><span class="l">Self / Advice</span></div>
-</div>
-
-<div class="table-scroll">
-<table class="corr">
-<thead><tr><th>#</th><th>Position</th><th>What it asks</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>The Present</td><td>The heart of the matter, right now.</td></tr>
-<tr><td>2</td><td>The Challenge (crossing)</td><td>What crosses or complicates it — laid sideways over card 1.</td></tr>
-<tr><td>3</td><td>The Foundation</td><td>The root or basis beneath the situation (deeper past, subconscious).</td></tr>
-<tr><td>4</td><td>The Recent Past</td><td>What is just passing out of the situation.</td></tr>
-<tr><td>5</td><td>Above / Goal</td><td>The conscious aim, or best possible outcome, that crowns it.</td></tr>
-<tr><td>6</td><td>The Near Future</td><td>What is approaching next.</td></tr>
-<tr><td>7</td><td>Self / Advice</td><td>The querent's own stance, or how to approach it.</td></tr>
-<tr><td>8</td><td>Environment</td><td>Outside influences — other people, circumstances.</td></tr>
-<tr><td>9</td><td>Hopes &amp; Fears</td><td>What the querent secretly wishes for, or dreads.</td></tr>
-<tr><td>10</td><td>The Outcome</td><td>Where the whole thing tends, if the course holds.</td></tr>
-</tbody>
-</table>
-</div>
-<p class="citations">Numbering and a few labels vary by author (some swap 3/5 as
-"below/above," or read 7 as "the querent"). Pick one convention and keep it — consistency
-matters more than which variant.</p>
-
-<h2>How to read it — don't just recite ten cards</h2>
-<p>The skill is <em>connection</em>, not ten mini-readings. A workable order:</p>
-<ol>
-<li><strong>1 + 2 first:</strong> the present crossed by its challenge — this is the whole
-question in miniature.</li>
-<li><strong>The timeline:</strong> 4 → 1 → 6 (past, present, approaching) — the story's motion.</li>
-<li><strong>The vertical axis:</strong> 3 (foundation, below) and 5 (goal, above) — what
-it rests on and what it reaches for.</li>
-<li><strong>The staff, 7 → 10:</strong> you, your environment, your hopes/fears, and where
-it lands.</li>
-<li><strong>Then dignities:</strong> look at neighbours' elements (Lesson 9). Is the
-Outcome well- or ill-dignified by what sits around it? Do fiery cards cluster? That
-texture is half the reading.</li>
-</ol>
-<p>Watch position <strong>9 (Hopes &amp; Fears)</strong> — the same card can be a hope
-<em>and</em> a fear at once; that ambivalence is often the reading's most honest moment.</p>
-
-<div class="key">
-<strong>Everything you've learned lands here.</strong> Each of the ten cards you now read
-from structure — arcanum, suit/element, number or rank, decan, dignity. The Celtic Cross
-is not a new skill so much as the stage where all the previous ones perform together.
-</div>
-
-<h2>Check your understanding</h2>
-<div class="quiz">
-
-<div class="quiz-q" data-answer="a">
-<p class="quiz-prompt">The first two cards of the Celtic Cross show the —</p>
-<div class="quiz-options">
-<button data-choice="a">heart of the matter and its challenge</button>
-<button data-choice="b">distant past and the final outcome</button>
-<button data-choice="c">hopes and fears and the environment</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>Card 1 (present) crossed by card 2 (challenge) is the whole question in miniature.</p>
-</div>
-
-<div class="quiz-q" data-answer="a">
-<p class="quiz-prompt">The crossing card (position 2) represents the —</p>
-<div class="quiz-options">
-<button data-choice="a">challenge or obstacle at play</button>
-<button data-choice="b">certain outcome of the matter</button>
-<button data-choice="c">advice the querent should follow</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>Laid sideways across card 1, it names what crosses or complicates the present.</p>
-</div>
-
-<div class="quiz-q" data-answer="a">
-<p class="quiz-prompt">The four cards of the "staff" culminate in the —</p>
-<div class="quiz-options">
-<button data-choice="a">outcome, at the top position</button>
-<button data-choice="b">present, at the top position</button>
-<button data-choice="c">challenge, at the top position</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>The staff runs 7 → 10 (self, environment, hopes/fears, outcome), ending at the outcome.</p>
-</div>
-
-<div class="quiz-q" data-answer="a">
-<p class="quiz-prompt">A strength of the ten-card spread is that it lets you —</p>
-<div class="quiz-options">
-<button data-choice="a">read elemental dignities between neighbours</button>
-<button data-choice="b">avoid interpreting any single card</button>
-<button data-choice="c">fix the outcome to a calendar date</button>
-</div>
-<p class="quiz-feedback" data-explain hidden>With ten cards adjacent, dignities (Lesson 9) add a whole layer of relationship.</p>
-</div>
-
-</div>
-
-<h2>Retrieval practice</h2>
-<div class="recall-card">
-<p class="recall-prompt">From memory: what do positions 1, 2, 5, and 10 represent?</p>
-<button class="recall-reveal">Reveal answer</button>
-<div class="recall-answer" hidden>
-<p><strong>1</strong> the present (heart of the matter); <strong>2</strong> the challenge
-(crossing it); <strong>5</strong> above — the goal / best outcome; <strong>10</strong> the
-final outcome.</p>
-</div>
-</div>
-
-<div class="recall-card">
-<p class="recall-prompt">Which reading order turns ten cards into one story (not ten fragments)?</p>
-<button class="recall-reveal">Reveal answer</button>
-<div class="recall-answer" hidden>
-<p>Read 1+2 together; then the timeline 4→1→6; then the vertical 3 (below) and 5 (above);
-then the staff 7→10; finally layer in elemental dignities between neighbours.</p>
-</div>
-</div>
-
-<div class="homework">
-<p class="homework-tag">Practice before the next lesson</p>
-<h2>Homework</h2>
-<ol>
-<li><strong>Lay a full Celtic Cross</strong> for a real, open question about your own life.
-Set the ten cards in the positions above (card 2 crossing card 1).</li>
-<li><strong>Read it in order</strong>, not left-to-right: 1+2, then 4→1→6, then 3 and 5,
-then the staff 7→10. Speak each card from its structure first.</li>
-<li><strong>Add dignities.</strong> Note the elements of adjacent cards — is the Outcome
-(10) strengthened or weakened by its neighbours in the staff?</li>
-<li><strong>Read the primary source:</strong> A. E. Waite's description of this spread in
-the <a href="https://sacred-texts.com/tarot/pkt/index.htm"><em>Pictorial Key</em></a>
-("An Ancient Celtic Method of Divination") — compare his position names to the ones here.</li>
-</ol>
-<p class="hw-why">Why read in a deliberate order: it forces you to build <em>relationships</em>
-between positions, which is exactly what separates a reading from a card-by-card recital.</p>
-</div>
-
-<div class="resources">
-<p class="resources-tag">Learning resources</p>
-<ul>
-<li><span class="rtype">Primary source</span> <a href="https://sacred-texts.com/tarot/pkt/index.htm" target="_blank" rel="noopener">Waite, The Pictorial Key</a> <span class="rfree">· free online</span> — the original “Ancient Celtic Method” layout.</li>
-<li><span class="rtype">Go deeper</span> <a href="/course/reference/reading-list.html">Pollack, Seventy-Eight Degrees of Wisdom</a> — Part III on reading whole spreads as one story.</li>
-<li class="rall"><a href="/course/reference/reading-list.html">The full annotated reading list →</a></li>
-</ul>
-</div>
-
-<ol class="citations">
-<li id="c1"><a href="https://sacred-texts.com/tarot/pkt/index.htm">A. E. Waite, <em>The Pictorial Key to the Tarot</em></a> — "An Ancient Celtic Method of Divination," the origin of the spread.</li>
-<li id="c2">Rachel Pollack, <em>Seventy-Eight Degrees of Wisdom</em> — reading whole spreads as connected narratives.</li>
-</ol>
-
-<hr class="rule">
-
-<p class="crosslinks">
-<a href="/course/reference/glossary.html">Reference: Glossary</a>
-<a href="/course/reference/correspondences.html">Reference: Master correspondence sheet</a>
-<a href="/course/lessons/0009-elemental-dignities.html">← Lesson 9: Elemental Dignities</a>
-</p>
-
-<p class="followup">You now have a big spread to grow into. Next we handle a question every
-reader must decide — <strong>reversals</strong>: what an upside-down card means, and whether
-to use them at all. Want to talk through a Celtic Cross you've laid? Ask your teacher (me)
-directly.</p>
-
-<script src="/course/assets/quiz.js"></script>
-<script src="/course/manifest.js?v=1"></script>
-<script src="/course/assets/course-nav.js" data-current="0010-celtic-cross"></script>
-</main>
-</body>
-</html>
+<a class="skip-link" href="#main-content">Skip to content</a><script src="/course/assets/shell.js?v=0b2532f6a6d6"></script><main class="course" id="main-content"><h1>The Celtic Cross: The Ten-Card Spread</h1><p class="meta">Lesson 10 of 22 · Reading Practice · Reading ~5 min · Practice separately</p><p class="lesson-intro">Read the Celtic Cross as relationships between defined positions, while distinguishing this course’s modern layout from Waite’s original dealing instructions.</p><h2>What a larger spread can and cannot add</h2>
+<p>A larger spread can separate different aspects of a question: present situation, challenge, foundation, aim, environment and possible direction. It also increases opportunities to invent connections. Use ten cards when those different positions answer useful questions, not because the number makes the reading more authoritative.</p>
+<p>Our course uses the modern arrangement shown below. Position 3 is Foundation, 4 Recent past, and 5 Aim. Waite’s published dealing order places 3 above/crowning, 4 beneath and 5 behind. He also selects a significator separately and relates the lateral placements to the figure’s facing direction. His title “An Ancient Celtic Method” is a title in the source, not independent historical proof of ancient Celtic origin. Learn one layout accurately and label variations when comparing books.</p>
+<figure><div class="spread-grid" style="grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,8rem);max-width:34rem"><div class="slot " style="grid-area:3/2"><span class="slot-n">1</span><span class="slot-label">Present</span></div><div class="slot crossing" style="grid-area:3/2"><span class="slot-n">2</span><span class="slot-label">Challenge</span></div><div class="slot " style="grid-area:4/2"><span class="slot-n">3</span><span class="slot-label">Foundation</span></div><div class="slot " style="grid-area:3/1"><span class="slot-n">4</span><span class="slot-label">Recent past</span></div><div class="slot " style="grid-area:1/2"><span class="slot-n">5</span><span class="slot-label">Aim</span></div><div class="slot " style="grid-area:3/3"><span class="slot-n">6</span><span class="slot-label">Approaching</span></div><div class="slot " style="grid-area:4/4"><span class="slot-n">7</span><span class="slot-label">Stance</span></div><div class="slot " style="grid-area:3/4"><span class="slot-n">8</span><span class="slot-label">Environment</span></div><div class="slot " style="grid-area:2/4"><span class="slot-n">9</span><span class="slot-label">Hopes / fears</span></div><div class="slot " style="grid-area:1/4"><span class="slot-n">10</span><span class="slot-label">Possible direction</span></div></div><figcaption>Course Celtic Cross · modern variant · 3 Foundation, 4 Recent past, 5 Aim. Card 2 crosses card 1; the staff runs 7–10 from bottom to top.</figcaption></figure><div class="table-scroll" tabindex="0" role="region" aria-label="Position key — course modern variant"><table class="corr reference-table"><caption>Position key — course modern variant</caption><thead><tr><th scope="col">Position</th><th scope="col">Question</th></tr></thead><tbody><tr><td>1</td><td>Present</td></tr><tr><td>2</td><td>Challenge</td></tr><tr><td>3</td><td>Foundation</td></tr><tr><td>4</td><td>Recent past</td></tr><tr><td>5</td><td>Aim</td></tr><tr><td>6</td><td>Approaching</td></tr><tr><td>7</td><td>Stance</td></tr><tr><td>8</td><td>Environment</td></tr><tr><td>9</td><td>Hopes / fears</td></tr><tr><td>10</td><td>Possible direction</td></tr></tbody></table></div>
+<h2>Ten positions, with their questions kept distinct</h2>
+<p>One is the present focus; Two crosses it as a challenge or modifying influence. A positive-seeming card can still be challenging in that position. Three is the underlying basis; Four concerns what is passing; Five is the conscious aim or imagined possibility; Six is the approaching development considered by the reading. Seven concerns the querent’s stance, Eight the surrounding conditions, Nine hopes and fears, and Ten a possible direction if the described pattern continues.</p>
+<p>For this course Seven means stance, rather than silently changing between self-description and advice. Advice can be developed during synthesis, but should not be inserted into a position whenever its descriptive reading is inconvenient. Similarly, Five is not guaranteed success and Ten is not a fixed verdict. Read the exact question a position asks.</p>
+<h2>A deliberately selected teaching example</h2>
+<p>For a fictional question about a community project, use: 1 Three of Pentacles; 2 Five of Wands; 3 Four of Pentacles; 4 Eight of Cups; 5 Star; 6 Two of Pentacles; 7 Queen of Swords; 8 Six of Pentacles; 9 Tower; 10 Three of Cups. These are teaching cards selected to show relationships. No actual person’s private circumstances are being inferred.</p>
+<p>Read One and Two first. Three of Pentacles makes collaboration and skilled contribution plausible themes. Five of Wands, crossing it, asks how competing efforts affect that collaboration. Is the contest productive, badly coordinated, or a sign of incompatible aims? You need context to distinguish those possibilities. Two does not automatically cancel One.</p>
+<p>Now examine the timeline Four → One → Six. Eight of Cups can invite a question about leaving an unsatisfying arrangement; the present Three of Pentacles about building with others; the approaching Two of Pentacles about maintaining work amid demands. Avoid announcing that the querent certainly left a group unless that fact has been supplied. Offer the sequence as an interpretation to test.</p>
+<p>Compare Three and Five. Four of Pentacles at the foundation might describe protected resources or tight control. Star at the aim could indicate a wish for renewal and openness. The tension may concern how a desired open project is supported by arrangements built to preserve control. That is a useful question about the positions, not a reason to invent a conflict from every pair.</p>
+<p>Read the staff. Queen of Swords as stance can invite clarity and discrimination, or examination of excessive distance. Six of Pentacles in the environment can raise questions about support and who controls its distribution. Tower in hopes/fears may express a desire for a break alongside fear of disruption; it does not predict catastrophe. Three of Cups as direction suggests examining the possibility of shared participation, conditional on how the actual work is handled.</p>
+<h2>Synthesis should reduce, not multiply, claims</h2>
+<p>A restrained synthesis might be: “This reading emphasizes skilled cooperation complicated by competing efforts. It asks whether the way resources are held supports the openness the project aims for. I would examine decision-making and the terms of outside support before interpreting the final Three of Cups as a viable shared outcome.” You have connected positions and identified something to investigate. You have not turned ten images into ten asserted facts.</p>
+<p>Do a second pass for contradiction. Is the reading simply restating the question? Did a card’s difficult content disappear because the final card looks pleasant? Could the querent’s stance contribute to the problem? A good synthesis can leave one question unresolved. The goal is a defensible reading, not a narrative in which every detail fits too neatly.</p>
+<h2>Add dignities only through a declared grouping</h2>
+<p>The layout’s geometry does not define one universal elemental-dignity algorithm. If you choose the timeline positions 4–1–6 as a trio, name them before comparing their elements. The centre is position 1 for that exercise. Do not compare whichever cards happen to be nearest on a screen and call the result the original Golden Dawn method. You can also omit this additional layer while you learn positional reading.</p><h2>Check your reasoning</h2><p>These recognition checks support practice. They do not certify interpretive skill.</p><div class="quiz"><div class="quiz-q" data-answer="c"><p class="quiz-prompt">In this course, position 3 is what?</p><div class="quiz-options"><button type="button" data-choice="a">Crowning aim</button><button type="button" data-choice="b">Recent past</button><button type="button" data-choice="c">Foundation</button></div><p class="quiz-feedback" data-explain hidden>Our modern variant uses 3 foundation, 4 past, 5 aim. Waite’s order differs.</p></div><div class="quiz-q" data-answer="b"><p class="quiz-prompt">How should you approach dignity analysis in this spread?</p><div class="quiz-options"><button type="button" data-choice="a">Choose the group whose result best supports the desired ending</button><button type="button" data-choice="b">Declare the group and centre before comparing elements</button><button type="button" data-choice="c">Treat every visually nearby card as an equivalent neighbour</button></div><p class="quiz-feedback" data-explain hidden>A defined procedure prevents selective interpretation.</p></div><div class="quiz-q" data-answer="a"><p class="quiz-prompt">What distinguishes Five and Ten here?</p><div class="quiz-options"><button type="button" data-choice="a">Five is the aim; Ten is a possible direction</button><button type="button" data-choice="b">Five and Ten both guarantee the desired outcome</button><button type="button" data-choice="c">Five is an obstacle; Ten records a fixed fate</button></div><p class="quiz-feedback" data-explain hidden>An aim and a possible direction are different questions.</p></div></div><h2>Retrieve before revealing</h2><div class="recall-card"><p class="recall-prompt">Why label the course Celtic Cross as a modern variant?</p><button type="button" class="recall-reveal">Reveal discussion</button><div class="recall-answer" hidden><p>Its position numbering differs from Waite’s published order. Clear labels allow comparison without suggesting that a different sequence is an error.</p></div></div><div class="recall-card"><p class="recall-prompt">Can the crossing card be favourable in ordinary card lists?</p><button type="button" class="recall-reveal">Reveal discussion</button><div class="recall-answer" hidden><p>Yes. A resource, opportunity or relationship can complicate the present question. Interpret its role in this position rather than replacing the position with its familiar keyword.</p></div></div><h2>Practice and spaced review</h2><ol><li>Lay the course layout from memory and state each position’s question before drawing.</li><li>Read a cross in four passes: heart, timeline, foundation/aim, staff. Write one paragraph of synthesis.</li><li>Identify one ambiguous pair of positions and one claim your reading cannot establish. Compare positions 3–5 with Waite.</li></ol><p>At your next session, recall one distinction from this lesson before opening it. Revisit it about a week later and again when a subsequent card study uses it. Mark uncertain material for review rather than treating a lookup as failure.</p><section class="source-reading"><h2>Read with the sources</h2><p><strong>Primary text: <a href="https://archive.sacred-texts.com/tarot/pkt/pkt0307.htm">Waite, Part III §7: An Ancient Celtic Method of Divination</a>.</strong> Compare the significator and positions 3–5 with this course’s explicitly labelled modern variant.</p><p><strong>Modern interpretive commentary: <a href="/course/reference/reading-list.html#pollack">Rachel Pollack, Seventy-Eight Degrees of Wisdom</a>.</strong> Read the matching card discussion after your own observation. Identify where Pollack’s psychological framing adds to or differs from Waite.</p></section><footer class="study-footer"><p><a href="/course">Course index</a> · <a href="/course/reference/correspondences.html">Correspondences</a> · <a href="/course/reference/glossary.html">Glossary</a> · <a href="/course/reference/reading-list.html">Reading list</a></p></footer></main><script src="/course/manifest.js?v=eb506d1df816"></script><script src="/course/assets/correspondence-data.js?v=ad798c7719f8"></script><script src="/course/assets/course-nav.js?v=9c77de8ff190" data-current="0010-celtic-cross"></script><script src="/course/assets/quiz.js?v=68087eec738a"></script><script src="/course/assets/correspondences.js?v=5ccfe7c92c0f"></script></body></html>
