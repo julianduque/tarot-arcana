@@ -658,7 +658,7 @@ figure.card-hero {
 /* ── Tarot: reading-list page ──────────────────────────────────────── */
 .rl-entry {
   display: grid;
-  grid-template-columns: 5rem 1fr;
+  grid-template-columns: 5rem minmax(0, 1fr);
   gap: 1.2rem;
   padding: 1.2rem 0;
   border-bottom: 1px solid var(--rule);
@@ -674,8 +674,14 @@ figure.card-hero {
   background: #fff;
 }
 @media (max-width: 520px) {
-  .rl-entry { grid-template-columns: 4rem 1fr; gap: 0.9rem; }
+  .rl-entry { grid-template-columns: 4rem minmax(0, 1fr); gap: 0.9rem; }
 }
+.rl-body { min-width: 0; }
+.rl-entry-text { grid-template-columns: 1fr; }
+.rl-source { padding-block: 1.2rem; border-bottom: 1px solid var(--rule); }
+.rl-source h3 { margin-top: 0; }
+.rl-source p:last-child { margin-bottom: 0; }
+.rl-source .tradition-label { margin-top: 0.4rem; }
 .rl-body h3 { margin: 0 0 0.1rem; font-size: 1.12rem; }
 .rl-body .rl-author {
   font-size: 0.78rem;
