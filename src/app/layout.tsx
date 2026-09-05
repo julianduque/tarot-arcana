@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   },
   description: "A quiet tarot reading and reflection practice.",
   applicationName: "Tarot Arcana",
-  manifest: "/manifest.json",
+  manifest: "/manifest.json?v=d85b872a5f2e",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+      { url: "/icon.svg?v=d85b872a5f2e", type: "image/svg+xml" },
+      { url: "/icon-192x192.png?v=d85b872a5f2e", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png?v=d85b872a5f2e", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: [{ url: "/icon.svg?v=d85b872a5f2e", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-touch-icon.png?v=d85b872a5f2e", sizes: "180x180", type: "image/png" }],
   },
 };
 

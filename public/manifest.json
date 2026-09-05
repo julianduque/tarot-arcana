@@ -11,19 +11,19 @@
   "categories": ["lifestyle"],
   "icons": [
     {
-      "src": "/icon-192x192.png",
+      "src": "/icon-192x192.png?v=d85b872a5f2e",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/icon-512x512.png?v=d85b872a5f2e",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/apple-touch-icon.png?v=d85b872a5f2e",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
